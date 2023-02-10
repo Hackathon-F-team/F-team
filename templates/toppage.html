@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!---英語を使用--->
+<html lang="en">
+  <head>
+		<!---文字コード--->
+    <meta charset="UTF-8" />
+		<!---IEを最新の状態で表示する--->
+		<!---参照：https://125naroom.com/web/3507#:~:text=%E3%80%8EX-UA-Compatible%E3%80%8F%E3%81%A3%E3%81%A6%EF%BC%9F%20IE%EF%BC%88Internet,Explorer%EF%BC%89%E3%81%AE%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%83%A2%E3%83%BC%E3%83%89%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E8%A8%98%E8%BF%B0%E3%81%A7%E3%81%99%E3%80%82%20%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A8%80%E3%81%86%E3%81%A8%E3%80%81%E3%81%A9%E3%81%AE%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AEIE%E3%81%A7%E8%A6%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B%E3%81%A3%E3%81%A6%E6%84%9F%E3%81%98%E3%81%A7%E3%81%99%E3%81%AD%E3%80%82%20%E3%80%8EIE%3Dedge%E3%80%8F%E3%81%A8%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E3%81%A8%E6%9C%80%E6%96%B0%E3%81%AE%E3%83%A2%E3%83%BC%E3%83%89%E3%81%A7%E8%A6%8B%E3%81%9B%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82--->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	 <!---参照；https://big-mac.jp/column/understanding-viewport-for-responsive-webdesign/--->
+	 <!---幅をデバイスの幅に合わせる　初期のズーム倍率　ズームしない(100%)--->
+		<!---参照；https://programmingnote.jp/archives/350--->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	 <!---base.htmlページ独自のタイトルを入れる--->
+   
+	 <!---cssを使用する-->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+	 <!---googleapisのフォントを使用する--->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+	 <!---gstaticのフォントを使用する--->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	 <!---googleapisのリンク先--->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+	<!---'sidebar.html''mobile-header.html'を引用--->
+	<!---body要素として固定--->
+  <body>
+
+    <h1>トップページ</h1>
+    <p>次はどこへ行こうかな</p>
+    
+    <!---画像貼り付け。参考URL：https://qiita.com/miriwo/items/409b5ca98c0989e942e2-->
+    <img src="/Users/moriyuto/Downloads/日本地図.png">
+    
+    
+    <!---ulタグでリスト化-->
+    <!---urlは適当-->
+    <ul>
+        <a href="htpps://tabichat_hokkaido">北海道</a>
+        <a href="htpps://tabichat_aomori">青森</a>
+        <a href="htpps://tabichat_akita">秋田</a>
+    </ul>
+
+
+  </body>
+</html>
