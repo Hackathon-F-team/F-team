@@ -2,14 +2,52 @@
 
 .日本地図{
 position: relative;
+width: 1000px;
+height: 1000px;
+z-index: -1;
 }
 
 
 .北海道 {
   position: absolute;
-  top: 70%;
-  left: 0%;
-
+  top: 50px;
+  left: 50px;
 }
 
+
+.青森 {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.秋田 {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.岩手 {
+  position: absolute;
+  top: 500px;
+  left: 600px;
+}
+
+.山形 {
+  position: absolute;
+  top: 450px;
+  left: 700px;
+}
+
+.宮城 {
+  position: absolute;
+  top: 600px;
+  left: 50px;
+}
+
+.福島 {
+  position: absolute;
+  top: 700px;
+  left: 200px;
+}
 
