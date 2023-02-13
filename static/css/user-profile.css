@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+body{
+  width:100%; /*ページ全体の幅は100%と指定する*/	
+  text-align:center; /*ページ全体を中央揃えにする*/
+  background-color: lightgoldenrodyellow;
+}
+.icon{
+  width: 300px;
+  height: 200px; 
+  margin-bottom: 20px;
+
+}
+
+a.img-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+  margin: auto;
+  padding: 1rem 4rem;
+  font-weight: bold;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 100vh;
+  color: #333;
+  border: 1px solid #999;
+  text-shadow: 0 1px #fff;
+  box-shadow: 0 3px 2px 1px #fcfcfc, 0 4px 6px #cecfd1, 0 -2px 2px #cecfd1, 0 -4px 2px #eee, inset 0 0 2px 2px #cecfd1;
+  transition: 0.5s;
+}
+a.img-button:hover {
+  opacity: 0.5;
+}
+
+.name{
+  margin-top: 20px;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.name-txt{
+  width: 250px;
+  background: #EEE;
+  
+}
+
+.introduce{
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.introduce-text{
+  width: 250px;
+  height: 80px;
+  background: #EEE;
+  margin-bottom: 10px;
+}
+
+a.profile-button{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    width: 120px;
+    margin: auto;
+    padding: 1rem 4rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    border: 2px dashed green;
+    color: green;
+    box-shadow: 5px 5px 0 green;
+    transition: 0.3s ease-in-out;
+  }
+  a.profile-button:hover {
+    box-shadow: 0 0 0;
+    transform: translate(5px, 5px);
+    color: green;
+  }
+
