@@ -15,46 +15,84 @@
 
 
 
+
   <body>
 
-    <h1>旅チャット</h1>
+   <h1>旅チャット</h1>
   
-  <!---クラスで名前をつけてcssで読み込めるように-->
-   <div class="日本地図">
-      <img src="https://github.com/Hackathon-F-team/F-team/blob/develop/static/img/%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3.png?raw=true">
+   <div class="日本地図"><!---このクラスを基準に位置調整されている-->
+      <img src="https://github.com/Hackathon-F-team/F-team/blob/develop/static/img/%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3.png?raw=true"class="map1">
 
        <div class="北海道">
-        <a href="/pref/{{1}}">{{prefectures[0]['name_jp']}}のチャンネル一覧</a><br>
+        <a href="#hokkaido">北海道</a> <!---ページ内リンクの作成-->
        </div>
 
-       <div class="青森">
-        <a href="/pref/{{2}}">{{prefectures[1]['name_jp']}}のチャンネル一覧</a><br>
+       <div class="東北地方">
+        <a href="#touhoku">東北地方</a>
        </div>
 
-       <div class="秋田">
-        <a href="/pref/{{3}}">{{prefectures[2]['name_jp']}}のチャンネル一覧</a><br>
+
+       <div class="関西地方">
+        <a href="ccc">関西地方</a>
        </div>
 
-       <div class="岩手">
-        <a href="/pref/{{4}}">{{prefectures[3]['name_jp']}}のチャンネル一覧</a><br>
+       <div class="信越・北陸地方">
+        <a href="ddd">信越・北陸地方</a>
        </div>
 
-       <div class="山形">
-        <a href="/pref/{{5}}">{{prefectures[4]['name_jp']}}のチャンネル一覧</a><br>
+       <div class="東海地方">
+        <a href="eee">東海地方</a>
        </div>
 
-       <div class="宮城">
-        <a href="/pref/{{6}}">{{prefectures[5]['name_jp']}}のチャンネル一覧</a><br>
+       <div class="近畿地方">
+        <a href="/fff">近畿地方</a>
        </div>
 
-       <div class="福島">
-        <a href="/pref/{{7}}">{{prefectures[6]['name_jp']}}のチャンネル一覧</a><br>
+       <div class="中国地方">
+        <a href="/ggg">中国地方</a>
        </div>
        
+       <div class="四国地方">
+        <a href="/hhh">四国地方</a>
+       </div>
+
+       <div class="九州地方">
+        <a href="/iii">九州地方</a>
+       </div>
+
+
+  </div>  
 
 
 
-  </div>    
+  <div class="channels"><!---ここから下のグレー部分-->
+
+    <div class="box1">
+
+        <p id="hokkaido">北海道</p><br><!---ページ内リンクの着地点-->
+        <a href="/pref/{{1}}">{{prefectures[0]['name_jp']}}のチャンネル一覧</a><br>
+    </div>
+
+
+    <div class="box2">
+
+      <p id="touhoku">東北地方</p><br><!---ページ内リンクの着地点-->
+      <ul id="touhokulist">   <!---ul順番になっていないリスト-->
+        <li><a href="/pref/{{2}}">{{prefectures[1]['name_jp']}}のチャンネル一覧</a></li>
+        <li><a href="/pref/{{3}}">{{prefectures[2]['name_jp']}}のチャンネル一覧</a></li>
+        <li><a href="/pref/{{4}}">{{prefectures[3]['name_jp']}}のチャンネル一覧</a></li>
+        <li><a href="/pref/{{5}}">{{prefectures[4]['name_jp']}}のチャンネル一覧</a></li>
+        <li><a href="/pref/{{6}}">{{prefectures[5]['name_jp']}}のチャンネル一覧</a></li>
+        <li><a href="/pref/{{7}}">{{prefectures[6]['name_jp']}}のチャンネル一覧</a></li>
+      </ul>
+
+      </div>
+
+  </div>
+  </div>
+
+  
+
 
 
   </body>
