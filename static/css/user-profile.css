@@ -1,9 +1,26 @@
 @charset "utf-8";
 
+.navigation {
+  width: 100%;
+  height: 30px;
+}
+.navigation a {
+  color: #fff;
+}
+
+header-icon{
+  width: 150px;
+  height: auto;
+}
 body{
   width:100%; /*ページ全体の幅は100%と指定する*/	
   text-align:center; /*ページ全体を中央揃えにする*/
   background-color: lightgoldenrodyellow;
+}
+
+.title{
+  font-weight: bold;
+  font-size: large;
 }
 .icon{
   width: 300px;
@@ -28,6 +45,8 @@ label {
     background-color: #384878;
     cursor: pointer;
     margin-top: 30px;
+    font-size: small;
+    letter-spacing: 0.12em;
 }
 
 a.img-button {
