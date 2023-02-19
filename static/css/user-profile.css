@@ -1,9 +1,26 @@
 @charset "utf-8";
 
+.navigation {
+  width: 100%;
+  height: 30px;
+}
+.navigation a {
+  color: #fff;
+}
+
+header-icon{
+  width: 150px;
+  height: auto;
+}
 body{
   width:100%; /*ページ全体の幅は100%と指定する*/	
   text-align:center; /*ページ全体を中央揃えにする*/
   background-color: lightgoldenrodyellow;
+}
+
+.title{
+  font-weight: bold;
+  font-size: large;
 }
 .icon{
   width: 300px;
@@ -12,8 +29,28 @@ body{
 
 }
 
+.img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 200px;       /* ※縦横を同値に */
+}
+
+.img-button[type="file"] {
+    display: none;
+}
+  
+label {
+    padding: 10px 40px;
+    color: #ffffff;
+    background-color: #384878;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: small;
+    letter-spacing: 0.12em;
+}
+
 a.img-button {
-  display: block;
+  display: none;
   text-align: center;
   text-decoration: none;
   width: 120px;
@@ -33,7 +70,7 @@ a.img-button:hover {
 }
 
 .name{
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: medium;
   font-weight: bolder;
 }

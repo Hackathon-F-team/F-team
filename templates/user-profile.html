@@ -9,29 +9,62 @@
       rel="stylesheet"
       href="../static/css/user-profile.css"
    />
-  
 </head>
-<header></header>
+<!--ヘッダー-->
+<header class="header">
+  <nav class="navigation">
+    <a href="create-channel.html"><img class="header-icon" src=""></a>
+  </nav>
+</header>
+
 <body>
-  <div class="title"> CREATE USER PROFILE</div>
+  <div class="title"> プロフィール</div>
+  <!--アイコンイメージ画像　画像を選択したらここに表示されるようにしたい　さらに丸枠に収まるように-->
   <div>
-    <img  class="icon" src="../static/img/6123.png">
-  </div>
+    <div>
+        <!--<img  class="img" src="../static/img/6123.png">-->
+        <!--<img  class="img" id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px;">-->
+        <p>
+        <img
+         class="img"
+         id="preview"
+         src="../static/img/6123.png"
+         style="max-width:200px;">
+        </p>
+      <form>
+        <label>        
+          <input
+          type="file"
+          name="file"
+          class="img-button"
+          accept='image/*'
+          onchange="previewImage(this);">
+          画像設定
 
-  <div>  
-    <a href="" class="img-button">setting</a>
+        </label>
+      </form>
+    </div>
   </div>
-
-  <div class="name">name</div>
+  <!--ニックネーム-->
+  <div class="name">ニックネーム</div>
   <input type="text" class="name-txt"></input>
-
-  <div class="introduce">introduce</div>
+  <!--自己紹介-->
+  <div class="introduce">自己紹介</div>
   <input type="text" class="introduce-text"></input>
-
+  <!--登録ボタン-->
   <div>  
-    <a href="" class="profile-button">regist</a>
+    <a href="" class="profile-button">登録</a>
   </div>
 
-  
+  <script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]); 
+    }
+  </script>
 </body>
 </html>
