@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template, session, flash
-from models2 import dbConnect
+from models import dbConnect
 from util.user import User
 from datetime import timedelta
 import hashlib
@@ -147,7 +147,7 @@ def add_channel(pref_id):
 
 
 ### チャンネル追加機能（独立ページ）
-@app.route('/create-channel/<pref_id>')
+@app.route('/create_channel/<pref_id>')
 def show_form_create_channel(pref_id):
     uid = session.get('uid')
     if uid is None:
@@ -187,7 +187,7 @@ def create_channel(pref_id):
 
 
 
-### 以下、サンプルアプリのままです。追加機能（画像投稿、いいね）実装の際に変更予定。
+### 以下、サンプルアプリのままです。追加機能実装後に変更予定。
 
 
 ### チャットルーム 
@@ -278,16 +278,16 @@ def delete_message():
 
     return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
-
+"""
+404.htmlを作成したらコメントアウトを外す。
+jinja2.exceptions.TemplateNotFound: error/404.htmlがターミナルに表示されるため。
 @app.errorhandler(404)
 def show_error404(error):
     return render_template('error/404.html')
-
-
 @app.errorhandler(500)
 def show_error500(error):
     return render_template('error/500.html')
-
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)

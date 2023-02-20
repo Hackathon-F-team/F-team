@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>create-channel</title>
-  <link
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャンネル作成</title>
+    <link
       rel="stylesheet"
       href="../static/css/create-channel.css"
-</head>
-<header></header>
-<body>
-  <!-- ユーザーがクリックした都道府県の名前を表示 ーーjuja2使用ーー -->
-  <h1 class="mapname">Hokkaido</h1>
-  <h2 class="titele">CREATE NEW CHANNEL</h2>
-  <div class="h">channel name</div>
-  <input type="text"/>
-  <div class="h">channel detaile</div>
-  <input type="text"/>
-  <div>  
-    <a href="" class="btn btn--yellow btn--cubic">CREATE</a>
-  </div>
+    />
+  </head>
 
-  
-</body>
+  <!--ヘッダー-->
+  <header></header>
+  <!--ボディー-->
+  <body>
+    <!--formタグで入力フォームを作成-->
+    <!--入力した内容がPOSTメソッドでサーバーに送られます。この後の処理はapp.pyに記載されています。-->
+    <form action="/map.html" method="POST">
+      <label for="title" class="titele">チャンネル作成</label>
+      <h1 class="mapname">{{prefecture['name_jp']}}にチャンネルを新規作成</h1>
+      <div>
+      <h2>チャンネル名</h2>
+      <input 
+        type="text"
+        placeholder="チャンネル名"
+        class="channel-form-input"
+        name="channel-title"
+      />
+      </div>
+      <div>
+      <h2>チャンネル詳細</h2>
+      <input
+        type="text"
+        placeholder="チャンネルの説明"
+        class="channel-form-input"
+        name="channel-description"
+      />
+      </div>
+      <!--<a href="" class="btn btn--yellow btn--cubic">作成</a>-->
+      <button id="add-channel-confirmation-btn" class="btn btn--yellow btn--cubic">登録</button>
+      <!--formタグで入力フォームを作成終わり-->
+    </form>
+  </body>
 </html>
+
 
