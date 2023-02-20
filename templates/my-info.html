@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ</title>
+</head>
+<body>
+    <h1> My Infomation </h1>
+    <p>ニックネーム：{{user.nickname}}</p>
+    <p>自己紹介文：{{user.profile}}</p>
+    <p> <img src="{{img_path}}"> </p>
+    <!-- <p> {{img_path}}</p> -->
+
+    <a href="/update_my_info/{{uid}}"}>マイプロフィール編集</a><br>
+    <a href="/users"}>ユーザー一覧</a><br>
+</body>
+</html>
