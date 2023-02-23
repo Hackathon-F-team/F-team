@@ -13,11 +13,13 @@
         <div class="signup">
             <form class="signup-form" method="post">
                 <p class="email">Email</p>
-                <div><input type="email" placeholder="aaaa@email.com"></div>
+                <div><input type="email" placeholder="aaaa@email.com" name="email"></div>
+
                 <p class="password">Password</p>
-                <div><input type="password" placeholder="abcd123"></div>
+                <div><input type="password" placeholder="abcd123" name="password"></div>
+                
                 <button>ログイン</button>
-                <div class="tologin"><a href="./signup.html">登録画面へ</a></div>
+                <div class="tologin"><a href="{{ url_for('signup') }}">登録画面へ</a></div>
             </form>
         </div>
     </div>
