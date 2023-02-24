@@ -110,3 +110,45 @@ body {
 p{
     font-size: 5px;
 }
+
+.globe {
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    border-radius: 50%;
+    position: relative;
+    background: url('https://1-notes.com/wp-content/uploads/2021/06/world-map.png') repeat-x;
+    background-size: auto 100%;
+    animation: rotate-anim 50s linear infinite;
+    box-shadow: -20px -10px 40px rgba(0, 0, 0, .75) inset;
+  }
+  
+  .globe:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+    width: 90px;
+    height: 4px;
+    border-radius: 50%;
+    background: #000;
+    filter: blur(4px);
+  }
+  
+  @keyframes rotate-anim {
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .dtable{
+    display: table;
+    table-layout:fixed; /* ブロックレベル要素を均等に配置 */
+    width:400px; /* ブロックレベル要素全体の幅 */
+    }
+    .dtable_c{
+
+    border: 1px solid #666;
+    }
