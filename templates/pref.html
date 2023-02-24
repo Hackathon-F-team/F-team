@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>map</title>
+    <title>pref</title>
 
     <link
       rel="stylesheet"
@@ -15,8 +15,6 @@
 
   <body>
 
-<!-- サンプルアプリからここを変えた -->
-  <title>channels</title>
 
 
   <div class="main-container channelpage">
@@ -25,29 +23,32 @@
 
 
 
-        <!-- サンプルアプリからここを変えた -->
+      
         <h1>{{prefecture["name_jp"]}}のチャンネル一覧</h1>
 
-        <button id="add-channel-btn">チャンネル追加</button>
+        <form  action="/pref/{{prefecture['id']}}"  method="POST">
+        
+          <!-- 一覧を表示させる -->
+        <div class="pagination-container">
+          <p id="prev"></li>
+          <ul class="pagination"></ul>
+          <p id="next">></p>
         </div>
 
+          <!-- チャンネル追加ページへのリンク -->
+        <div class="addchannel-button">
+          <button>
+              <a href='/create_channel/<pref_id>' >チャンネルの追加</a>
+          </button>
+        </div>
 
-      <div class="pagination-container">
-        <p id="prev"></li>
-        <ul class="pagination"></ul>
-        <p id="next">></p>
-      </div>
+        </form>
 
-      
-      <ul class="channel-box"></ul>
-      {% include 'modal/add-channel.html' %}
-      {% include 'modal/delete-confirmation.html' %}
+        </div>
+    </div>
+  </div>
 
-			<!-- 説明を追加 
-      app.pyからprefectureとchannels、uidを受け取っています
-      それぞれ下のようなテーブル構造を反映したデータになっています--->
-    
-
+     
 </body>
 
 
