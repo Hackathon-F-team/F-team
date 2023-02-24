@@ -1,6 +1,6 @@
 
 -- DROP文は存在しないものを削除しようとするとエラーが出るため、IF EXISTSを追加してエラーを回避。
--- 存在する場合は、chatappと'testuser'@'localhost'を削除する。
+-- 存在する場合は、mapchatと'testuser'@'localhost'を削除する。
 DROP DATABASE IF EXISTS mapchat;
 DROP USER IF EXISTS 'testuser'@'localhost';
 
@@ -22,8 +22,8 @@ CREATE TABLE users (
     password varchar(255) NOT NULL,
     nickname varchar(255),
     profile text,
-    -- varchar型に変更
-    img_id varchar(255)
+    -- img_pathに変更
+    img_path varchar(255)
 );
 
 
@@ -47,8 +47,8 @@ CREATE TABLE messages (
     cid bigint unsigned not null,
     message text,
     created_at timestamp not null default current_timestamp,
-    -- varchar型に変更
-    img_id varchar(255),
+    -- img_pathに変更
+    img_path varchar(255),
 	
 	-- 外部キー制約。channelsテーブルのidを参照し、チャンネルが削除された際には、同チャンネル内のメッセージのレコードも削除する。
 	INDEX cid_index (cid),
@@ -81,11 +81,11 @@ CREATE TABLE reactions (
 
 
 -- imagesテーブルを作成する。
-CREATE TABLE images (
-    id varchar(255) PRIMARY KEY,
-    name varchar(255),
-    img_path varchar(255) UNIQUE NOT NULL
-);
+-- CREATE TABLE images (
+--     id varchar(255) PRIMARY KEY,
+--     name varchar(255),
+--     img_path varchar(255) UNIQUE NOT NULL
+-- );
 
 
 

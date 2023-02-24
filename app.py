@@ -6,6 +6,11 @@ import hashlib
 import uuid
 import re
 
+# 画像関係
+from werkzeug.utils import secure_filename
+import os
+
+
 
 app = Flask(__name__)
 app.secret_key = uuid.uuid4().hex
@@ -92,7 +97,6 @@ def logout():
 
 
 
-### ここ（９５行目）から１８３行目までが主な変更箇所です。
 # map画面を呼び出す
 @app.route('/')
 def index():
@@ -184,10 +188,154 @@ def create_channel(pref_id):
 
 
 
+##### ユーザープロフィール機能、画像アップロード機能
+
+
+# 画像のアップロード先のディレクトリ
+UPLOAD_FOLDER = './static/uploads'
+# アップロードされる拡張子の制限
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'gif'])
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+def allwed_file(filename):
+    # .があるかどうかのチェックと、拡張子の確認
+    # OKなら１、だめなら0
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 
-### 以下、サンプルアプリのままです。追加機能実装後に変更予定。
+### マイページ表示
+@app.route('/my_info/<user_id>')
+def my_info(user_id):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    
+    # ユーザーIDが一致するユーザー情報を取得する。
+    user = dbConnect.getUserbyUid(user_id)
+
+    # img_pathを取得する。
+    img_path = user["img_path"]
+    if img_path is None:
+        img_path = "../static/img/icon_user.png"
+
+    return render_template('my-info.html', user=user, uid=uid, img_path=img_path)
+
+
+
+### マイ情報編集 GET
+@app.route('/update_my_info/<user_id>')
+def show_form_update_my_info(user_id):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    
+    # ユーザーIDが一致するユーザー情報を取得する。
+    user = dbConnect.getUserbyUid(user_id)
+    return render_template('update-my-info.html', user=user, uid=uid)
+
+
+
+### マイ情報編集 POST
+@app.route('/update_my_info/<user_id>', methods=['POST'])
+def update_my_info(user_id):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    # ユーザー本人のアクセスでなければ、ログイン画面に戻る。
+    if uid != user_id:
+        return redirect('/login')
+
+    # ユーザーIDが一致するユーザー情報を取得する。
+    user = dbConnect.getUserbyUid(uid)
+
+    # img_pathを取得する。
+    img_path = user["img_path"]
+    if img_path is None:
+        img_path = "../static/img/icon_user.png"
+
+    # ニックネームとプロフィールの設定。
+    nickname = user["nickname"]
+    profile = user["profile"]
+    
+    if request.form.get('nickname'):
+        nickname = request.form.get('nickname')
+    if request.form.get('profile'):
+        profile = request.form.get('profile')
+    
+
+    # 画像がアップロードされた場合
+    if 'file' in request.files:
+        # データの取り出し
+       file = request.files['file']
+    #    # ファイル名がなかった時の処理
+    #    if file.filename == '':
+    #            flash('ファイルがありません')
+    
+    if file and allwed_file(file.filename):
+        # 危険な文字を削除（サニタイズ処理）
+        filename = secure_filename(file.filename)
+
+        ### ファイルネームを”img_id.拡張子”にリネームする
+        img_id = uuid.uuid4()
+        extension = os.path.splitext(file.filename)[1]
+        filename = str(img_id) + extension
+
+        img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(img_path)
+
+        # app.pyからのパスではなく、templatesの配下のhtmlからのパスに変更するため、"."を追加する。
+        img_path = "." + img_path
+
+    # usersテーブルのレコードを更新する。
+    dbConnect.updateUser(uid, nickname, profile, img_path)
+    user = dbConnect.getUserbyUid(uid)
+
+
+    return render_template('my-info.html', user=user, uid=uid, img_path=img_path)
+
+
+
+
+### ユーザー一覧表示
+@app.route('/users')
+def users():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    
+    # 全ユーザー情報を取得する。
+    users = dbConnect.getUsersAll()
+
+    return render_template('users.html', users=users, uid=uid)
+
+
+### ユーザープロフィール表示
+@app.route('/user_info/<user_id>')
+def user_info(user_id):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    
+    # ユーザーIDが一致するユーザー情報を取得する。
+    user = dbConnect.getUserbyUid(user_id)
+    # img_pathを取得する。
+    img_path = user["img_path"]
+    if img_path is None:
+        img_path = "../static/img/icon_user.png"
+
+    return render_template('user-info.html', user=user, uid=uid, img_path=img_path)
+
+
+
+
+
+
+
+
+
+
 
 
 ### チャットルーム 
@@ -243,6 +391,8 @@ def delete_channel(cid):
 
 
 
+
+# 画像投稿機能に対応。
 @app.route('/message', methods=['POST'])
 def add_message():
     uid = session.get("uid")
@@ -255,8 +405,32 @@ def add_message():
     if message:
         dbConnect.createMessage(uid, channel_id, message)
 
+
+    # 画像がアップロードされた場合
+    if 'file' in request.files:
+        # データの取り出し
+        file = request.files['file']
+        if file and allwed_file(file.filename):
+            # 危険な文字を削除（サニタイズ処理）
+            filename = secure_filename(file.filename)
+
+            ### ファイルネームを”img_id.拡張子”にリネームする
+            img_id = uuid.uuid4()
+            extension = os.path.splitext(file.filename)[1]
+            filename = str(img_id) + extension
+
+            img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(img_path)
+            # app.pyからのパスではなく、templatesの配下のhtmlからのパスに変更するため、"."を追加する。
+            img_path = "." + img_path
+
+            dbConnect.createMessageWithImg(uid, channel_id, img_path)
+    
+
+
     channel = dbConnect.getChannelById(channel_id)
     messages = dbConnect.getMessageAll(channel_id)
+
 
     return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
@@ -278,19 +452,21 @@ def delete_message():
 
     return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
-"""
-404.htmlを作成したらコメントアウトを外す。
-jinja2.exceptions.TemplateNotFound: error/404.htmlがターミナルに表示されるため。
-
-@app.errorhandler(404)
-def show_error404(error):
-    return render_template('error/404.html')
 
 
-@app.errorhandler(500)
-def show_error500(error):
-    return render_template('error/500.html')
-"""
+
+# TemplateNotFoundを回避するため、一時的にコメントアウト
+# エラーページが作成されたら#を消す。
+
+# @app.errorhandler(404)
+# def show_error404(error):
+#     return render_template('error/404.html')
+
+
+# @app.errorhandler(500)
+# def show_error500(error):
+#     return render_template('error/500.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
