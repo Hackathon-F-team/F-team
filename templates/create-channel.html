@@ -35,39 +35,8 @@
   </form>
   
     
-  </div>
 
-  <!--ヘッダー-->
-  <header></header>
-  <!--ボディー-->
-  <body>
-    <!--formタグで入力フォームを作成-->
-    <!--入力した内容がPOSTメソッドでサーバーに送られます。この後の処理はapp.pyに記載されています。-->
-    <form action="/map.html" method="POST">
-      <label for="title" class="titele">チャンネル作成</label>
-      <h1 class="mapname">{{prefecture['name_jp']}}にチャンネルをつくる</h1>
-      <div>
-      <h2>チャンネル名</h2>
-      <input 
-        type="text"
-        placeholder="チャンネル名"
-        class="channel-form-inputname"
-        name="channel-title"
-      />
-      </div>
-      <div>
-      <h2>チャンネル詳細</h2>
-      <input
-        type="text"
-        placeholder="チャンネルの説明"
-        class="channel-form-inputdetaile"
-        name="channel-description"
-      />
-      </div>
-      <!--<a href="" class="btn btn--yellow btn--cubic">作成</a>-->
-      <button id="add-channel-confirmation-btn" class="btn btn--yellow btn--cubic">登録</button>
-      <!--formタグで入力フォームを作成終わり-->
-    </form>
+ 
   </body>
 </html>
 
