@@ -87,3 +87,68 @@ body {
     color:white;
     font-size: 20px;
 }
+
+.app-name {
+	font-size:30em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color:#1D72F2;
+	text-shadow:
+		1px -1px 1px #BDBDBD,
+		-1px 2px 1px #737272,
+		-2px 4px 1px #767474,
+		-3px 6px 1px #787777,
+		-4px 8px 1px #424242,
+		-5px 10px 1px #616161,
+		-6px 12px 1px #757575,
+		-7px 14px 1px #9E9E9E,
+		-8px 16px 1px #BDBDBD,
+		-9px 18px 1px #E0E0E0;
+}
+
+p{
+    font-size: 5px;
+}
+
+.globe {
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    border-radius: 50%;
+    position: relative;
+    background: url('https://1-notes.com/wp-content/uploads/2021/06/world-map.png') repeat-x;
+    background-size: auto 100%;
+    animation: rotate-anim 50s linear infinite;
+    box-shadow: -20px -10px 40px rgba(0, 0, 0, .75) inset;
+  }
+  
+  .globe:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+    width: 90px;
+    height: 4px;
+    border-radius: 50%;
+    background: #000;
+    filter: blur(4px);
+  }
+  
+  @keyframes rotate-anim {
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .dtable{
+    display: table;
+    table-layout:fixed; /* ブロックレベル要素を均等に配置 */
+    width:400px; /* ブロックレベル要素全体の幅 */
+    }
+    .dtable_c{
+
+    border: 1px solid #666;
+    }
