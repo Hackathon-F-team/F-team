@@ -1,0 +1,57 @@
+<!----------------add-cannel-modalというidをつけてグループ化（設定）------------------->
+
+<div id="add-channel-modal" class="modal">
+
+    <!-----------add-channel-modalの中でmodalという名前のグループ（設定）------------>
+    <div class="modal-content">
+    
+    <!---------modalの中でheaderのグループ（設定）--------->
+    <div class="modal-header">
+    
+     <!--見出し-->
+    <h5>チャンネルを追加</h5>
+    
+     <!--猫のgif-->
+    <img
+    src="{{ url_for('static',filename='img/cat-on-bar.gif') }}"
+    class="modal-gif"
+    />
+    
+     <!--閉じるための×ボタン-->
+    <span class="modalClose" id="add-page-close-btn">×</span>
+    </div>
+    <!---------headerのグループ（設定）終わり--------->
+    
+    
+    
+    <!---------modalの中でmodal-bodyのグループ（設定）--------->
+    
+    <!--formタグで入力フォームを作成-->
+    <!--入力した内容がPOSTメソッドでサーバーに送られます。この後の処理はapp.pyに記載されています。-->
+    <form class="modal-body" action="/" method="POST">
+    
+    <!--チャンネル名の入力欄。placeholderとは先に入っている仮の文字列-->
+    <input
+    type="text"
+    placeholder="チャンネル名"
+    class="channel-form-input"
+    name="channel-title"
+    />
+    
+    <!--チャンネル説明の入力欄。placeholderとは先に入っている仮の文字列-->
+    <input
+    type="text"
+    placeholder="チャンネルの説明"
+    class="channel-form-input"
+    name="channel-description"
+    />
+    
+    <!--右下の登録ボタン-->
+    <button id="add-channel-confirmation-btn">登録</button>
+    </form>
+    <!--formタグで入力フォームを作成終わり-->
+    
+    </div>
+    <!---------modalの中でmodal-bodyのグループ（設定）終わり--------->
+    </div>
+    <!----------------add-cannel-modalというidをつけてグループ化（設定終わり）------------------->

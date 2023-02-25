@@ -39,3 +39,10 @@
     font-size: 40px;
     font-weight: 900;
   }
+
+
+.５件ずつ表示{
+  width: 50vw;
+  display: flex;  /*flexコンテナを作成*/
+  justify-content: space-between; /*flexコンテナの中身を横並びにしている。*/ 
+  }

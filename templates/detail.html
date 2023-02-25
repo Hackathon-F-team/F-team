@@ -20,16 +20,27 @@
   <div class="main-container">
 
     <div class="chat-box">
+
+
+
       <div id="chat-header">
         <!-- もしuidとチャンネル作成者が同じならタイトル、説明を編集可能にする -->
         <p id="chatroom-name">{{ channel.name }}</p>
         {% if channel.abstract is not none %}
           <p id="chatroom-description">{{ channel.abstract }}</p>
         {% endif %}
+
+
         {% if uid == channel.uid %}
           <button id='channel-update' class="basic-btn smaller-btn">編集</button>
+          {% include 'modal/update-channel.html' %}
         {% endif %}
+
+
       </div>
+
+
+
       <div id="message-area">
         {% if messages|length > 0 %}
           {% for message in messages %}
@@ -76,17 +87,38 @@
     const channel = JSON.parse('{{ channel|tojson }}');
     const uid = JSON.parse('{{ uid|tojson }}');
   </script>
+
+
   <script
     src="{{url_for('static',filename='js/scroll-message.js')}}"
     type="text/javascript"
   ></script>
+
+
   <script
     src="{{url_for('static',filename='js/update-channel.js')}}"
     type="text/javascript"
   ></script>
+
+
   <script
     src="{{url_for('static',filename='js/modal.js')}}"
     type="text/javascript"
   ></script>
 
+  <script type="text/javascript">
+
+  if (uid === item.uid) {
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "削除";
+    deleteButton.classList.add("basic-btn");
+    deleteButton.classList.add("smaller-btn");
+    li.appendChild(deleteButton);
+    deleteButton.addEventListener("click", () => {
+      modalOpen("delete");
+    </script>
+
+
 </body>
+
+</html>

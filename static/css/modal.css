@@ -14,7 +14,7 @@
   
   
   .modal-content {/*実際のmodalウィンドウの部分*/
-    background-color: var(--navy);
+    background-color: #fbfaf5;
     margin: 20% auto;
     width: 70%;
     border-radius: 20px; /*楕円形の比率*/
@@ -45,20 +45,23 @@
   
   
   .modal-header { /*modalウィンドウのヘッダーの共通部分（右上のチャンネルの追加）*/
-    background: var(--ash_grey);
+    background: #fbfaf5;
     padding: 3px 15px 3px 32px; /*#パディング領域。余白のようなもの。上にリンク*/
     border-radius: 20px 20px 0 0;
-    color: var(--navy);
+    color: #131313;
     display: flex;  /*flexコンテナを作成*/
     justify-content: space-between; /*flexコンテナの中身を横並びにしている。*/ 
   }
   
   .modal-header h5 span {
     z-index: 4;
+
   }
   
   .modalClose {
     font-size: 2rem;
+    background-color: #fbfaf5;
+
   }
   
   .modalClose:hover {
@@ -70,18 +73,24 @@
     display: flex;  /*flexコンテナを作成*/
     flex-direction: column; /*flexコンテナの中身は縦書き*/
     align-items: center; /*align-itemsはflexコンテナ内の要素を垂直方向のどの位置に配置するかを指定。*/
-    color: var(--snow); /*色白*/
+    color: #2f2f2f;/*色白*/
+
   }
+  
+  .head5{
+  background-color: #fbfaf5;
+  }
+
   
   .channel-form-input { /*modalウィンドウの入力部分。*/
     width: 70%;  /*横幅*/
-    background-color: transparent; /*透明にしている*/
-    border-bottom: 1px solid lightgrey; /*入力の下線部分*/
-    box-shadow: 0 10px 15px -12px var(--middle_pink); /*上の影*/
+    background-color:  #2f2f2f;/*透明にしているtransparent;*/
+    border-bottom: 1px solid #2f2f2f; /*入力の下線部分*/
+    box-shadow: 0 10px 15px -12px #2f2f2f; /*上の影*/
     margin-top: 8px; 
     margin-bottom: 20px; /*余白の調整*/
     padding-bottom: 10px; /*パディング領域。余白のようなもの。上にリンク*/
-    color: var(--middle_pink);
+    color: #fbfaf5;
   }
   
   #bar { /*入力の下線部分かも*/
@@ -91,15 +100,34 @@
 
   
   .modal-body button { /*modalウィンドウのボタンの共有事項*/
-    background-color: var(--baby_pink);
+    background-color: #fbfaf5;
   }
   
   .modal-body button:hover { /*modalウィンドウのボタンのホバー機能の共有事項*/
-    background-color: var(--middle_pink);
+    background-color: #fbfaf5;
   }
   
   
+
+/*ほそまつボタンの色を変えるために実験中*/
+  .add-page-close-btn{
+  background-color: #fbfaf5;
+
+  }
+
+  .delete-page-close-btn{
+    background-color: #fbfaf5;
+
+  }
   
+  .delete-channel-confirmation-btn{
+    background-color: #fbfaf5;
+
+  }
+
+
+
+
   
   /*以下はメディアクエリ。ユーザが使用しているディスプレイに応じて異なるCSSを適用させる*/
   

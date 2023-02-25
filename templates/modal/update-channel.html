@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャンネル作成</title>
+    <link
+      rel="stylesheet"
+      href="../static/css/modal.css"
+      />
+</head>
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+<!----------------update-cannel-modalというidをつけてグループ化（設定）------------------->
+<div id="update-channel-modal" class="modal">
+
+    <!----------update-channel-modalの中でmodalという名前のグループ（設定）---------->
+      <div class="modal-content">
+    
+    <!---------modalの中でheaderのグループ（設定）--------->
+        <div class="modal-header">
+          <div class="head5">
+          <h5>チャンネル変更</h5>
+          </div>
+
+           <!----閉じるための×ボタン-----> 
+          <span class="modalClose" id="update-page-close-btn">×</span>
+        </div>
+    <!---------modalの中でheaderのグループ（設定）終わり--------->
+    
+    <!---------modalの中でbodyのグループ（設定）だと思ったけどdivタグがない、、なぜ--------->
+        <form class="modal-body" action="/update_channel" method="POST">
+          <input
+            type="text"
+            placeholder="チャンネル名"
+            class="channel-form-input"
+            name="channel-title"
+          />
+          <input
+            type="text"
+            placeholder="チャンネルの説明"
+            class="channel-form-input"
+            name="channel-description"
+          />
+          <input type="hidden" name='cid' value='{{ channel.id }}'>
+            <button>変更</button>
+        </form>
+      </div>
+    <!---------modalの中でbodyのグループ（設定）終わり--------->
+    </div>
+    <!----------update-channel-modalの中でmodalという名前のグループ（設定）---------->
+
+</body>
+</html>
