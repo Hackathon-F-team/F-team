@@ -7,6 +7,46 @@ body {
   min-height: 100vh;
   margin: 0 auto;
 }
+.header {
+  background-color: white;
+}
+
+.header-list {
+  display:flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+.header li {
+}
+
+.applogo {
+  color: #7D8895;
+  font-size: 30px;
+  list-style: none;
+  display: inline-block;
+  /* padding: 10px; */
+  margin-right: auto;
+}
+
+.applogo a {
+  text-decoration: none;
+  color: #7D8895;
+}
+
+.appname {
+  display: inline-block;
+  color: #7D8895;
+  list-style: none;
+  padding: 15px;
+  
+}
+
+.appname a {
+  text-decoration: none;
+  color: #7D8895;
+  justify-content: flex-end;
+}
 
 h1 {
   text-align: center;
