@@ -394,7 +394,7 @@ h1 {
     -ms-transform: translate(-50%, -50%);
   width: 800px;
   height: 200px;
-  background: hsl(5, 56%, 59%);
+  background: hsl(5, 68%, 72%);
   z-index: -1;
 }
 
@@ -436,7 +436,7 @@ h1 {
     -ms-transform: translate(-50%, -50%);
   width: 800px;
   height: 280px;
-  background: hsl(5, 68%, 72%);
+  background: hsl(5, 56%, 59%);
   z-index: -1;
 }
 
