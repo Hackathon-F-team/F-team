@@ -14,10 +14,10 @@
   </head>
 
   <body>
-
+    
     <div class="header">
       <ul class="header-list">
-          <li class="applogo">タビコミ</li>
+          <li class="applogo">tabiComi</li>
           <li class="appname"><a href="/">日本地図へ</a></li>
           <li class="appname"><a href="/my_info/{{uid}}">マイページ</a></li>
           <li class="appname"><a href="/users">ユーザ一覧</a></li>
@@ -47,10 +47,16 @@
       
 
           <!-- チャンネル追加ページへのリンク -->
-        <div class="addchannel-button">
-          <button onclick="location.href='/create_channel/{{prefecture.id}}'">チャンネル作成</button>
-      
-        </div>
+        <!-- <div class="addchannel-button">
+          <button onclick="location.href='/create_channel/{{prefecture.id}}'">チャンネル作成</button>      
+        </div> -->
+
+        <!-- <a href="/create_channel/{{prefecture.id}}" class="btn btn-gradient"><span>チャンネル作成</span></a> -->
+
+        <button class="btn" onclick="location.href='/create_channel/{{prefecture.id}}'">
+          <span class="btn-text-one">wanna Create?</span>
+          <span class="btn-text-two">Create!</span>
+        </button>
 
 <!-- モーダルの読み込み -->
         <ul class="channel-box"></ul>
