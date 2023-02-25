@@ -12,6 +12,7 @@ body{
 
 .titele{
   font-size: x-large;
+  font-weight: bold;
 }
 
 .h{
@@ -74,4 +75,12 @@ a.btn--yellow:active {
   color: #000;
   background: #fff20a;
   border-bottom: 2px solid #ccc100;
+}
+
+.channel-form-inputname{
+  width:250px;
+}
+
+.channel-form-inputdetaile{
+  width: 250px;
 }

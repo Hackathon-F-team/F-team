@@ -7,15 +7,15 @@
   <title>ユーザー情報</title>
   <link
       rel="stylesheet"
-      href="../static/css/user-profile.css"
+      href="../../static/css/user-profile.css"
   />
 </head>
 <!--ヘッダー-->
 <body>
-   <p>ニックネーム：{{user.nickname}}さん</p>
-   <p> <img src="{{img_path}}"> </p>
+   <p class="name">ニックネーム：{{user.nickname}}さん</p>
+   <p> <img src="{{img_path}}" calss="img"> </p>
    <!-- <p> {{img_path}}</p> -->
-   <p>プロフィール：{{user.profile}}</p>
+   <p class="title">プロフィール：{{user.profile}}</p>
 
    <a href="/users"}>ユーザー一覧</a><br>
 
