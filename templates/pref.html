@@ -37,12 +37,9 @@
        
       
 
-          <!-- チャンネル追加ページへのリンク(ここが機能してないので強制的に岩手に飛ばす) -->
+          <!-- チャンネル追加ページへのリンク -->
         <div class="addchannel-button">
-          <button>
-              <a href='/create_channel/3' >チャンネルの追加</a>
-          </button>
-
+          <button onclick="location.href='/create_channel/{{prefecture.id}}'">チャンネル作成</button>
       
         </div>
 
@@ -96,6 +93,11 @@
         a.innerText = item.name;
         a.setAttribute("href", url);
         li.appendChild(a);
+
+
+
+
+
         //// もしチャンネル作成者uidとuidが同じだったら削除ボタンを追加
         if (uid === item.uid) {
           const deleteButton = document.createElement("button");
@@ -105,9 +107,14 @@
           li.appendChild(deleteButton);
           deleteButton.addEventListener("click", () => {
             modalOpen("delete");
+
+
+
             const confirmationButtonLink = document.getElementById(
               "delete-confirm-link"
             ); // aタグ
+
+            
             const url = `/delete/${item.id}`;
             confirmationButtonLink.setAttribute("href", url);
           });
@@ -152,7 +159,10 @@
     pagination();
   };
 
+
 </script>
+
+
 
 
 </body>
