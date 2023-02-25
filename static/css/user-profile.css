@@ -115,3 +115,25 @@ a.profile-button{
     color: green;
   }
 
+  .channel-title {
+    position: relative;
+  padding: 0.35em 0.5em;
+  background: #b6e9ff;
+  color: #393939;
+  }
+
+  .channel-title:before {
+    content: " ";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: -webkit-calc(100% - 16px);
+    width: calc(100% - 16px);
+    height: 0;
+    border: solid 20px transparent;
+    border-bottom-color: #b2ddf0;
+  }
+
+  .subtitle{
+    font-weight:initial;
+  }

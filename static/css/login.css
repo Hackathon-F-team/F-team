@@ -13,6 +13,7 @@ body {
     color: #ffffff;
     text-align: center;
     font-size: 95px;
+    padding-top: 50px;
 }
 
 .signup {
@@ -37,6 +38,7 @@ body {
 
 .email {
     margin-right: 580px;
+    padding-left: 60px;
 }
 
 .password {
@@ -57,7 +59,7 @@ body {
     border-radius: 30px;
     height: 57px;
     width: 191px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .signup-form button:hover {
