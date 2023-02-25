@@ -1,86 +1,87 @@
 @charset "utf-8";
 
-.body{
+body {
   background-color: d3d3d3;
-  width:100%; /*ページ全体の幅は100%と指定する*/	
-  text-align:center;
+  width: 100%; /*ページ全体の幅は100%と指定する*/
+  text-align: center;
+  min-height: 100vh;
+  margin: 0 auto;
 }
 
-
-h1{
-  text-align:center; 
+h1 {
+  text-align: center;
+  padding: 22px 0;
+  margin: 0 auto;
 }
 
-
-.日本地図{/*位置の基準として置いている。実態はない*/
-position: relative;/*位置の基準となる*/
-width: 100%;
-z-index: -2;
-text-align:center;
+.日本地図 {
+  /*位置の基準として置いている。実態はない*/
+  position: relative; /* 位置の基準となる */
+  width: 68%;
+  margin: auto;
+  height: auto;
+  z-index: -2;
+  text-align: center;
 }
 
-.map1{
-  position: absolute;
-  width: 75%;
-  z-index: -1;
-  left: 50%;
-  transform: translate(-50%, 0%);/*左上が移動の基準になっているためその分x軸に移動している*/
- 
+.map1 {
+  width: 100%;
+  height: auto;
 }
 
 .北海道 {
   position: absolute;
-  top: 100px;   /*100,1050*/
-  left: 75%;
+  top: 9%; /*100,1050*/
+  left: 84%;
   z-index: 1;
 }
 
 .東北地方 {
   position: absolute;
-  top: 300px;
-  left: 72%;
+  top: 40%;
+  left: 80%;
 }
 
 .関東地方 {
   position: absolute;
-  top: 650px;
-  left: 72%;
+  top: 65%;
+  left: 81%;
 }
 
 .信越・北陸地方 {
   position: absolute;
-  top: 500px;
-  left: 57%;
+  top: 50%;
+  left: 60%;
 }
 
 .東海地方 {
   position: absolute;
-  top: 700px;
-  left: 60%;
+  top: 69%;
+  left: 66%;
 }
 
 .近畿地方 {
   position: absolute;
-  top: 680px;
+  top: 75%;
   left: 48%;
 }
 
 .中国地方 {
   position: absolute;
-  top: 650px;
-  left: 35%;
+  top: 65%;
+  left: 31%;
 }
 
 .四国地方 {
   position: absolute;
-  top: 820px;
-  left: 35%;
+  top: 81%;
+  left: 31%;
 }
 
 .九州地方 {
   position: absolute;
-  top: 650px;
-  left: 15%;
+  top: 71%;
+  left: 14%;
 }
 
 
@@ -465,9 +466,3 @@ text-align:center;
 .box9 li{
   list-style:none;/*点を消す*/
 }
-
-
-
-
-
-
