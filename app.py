@@ -452,16 +452,14 @@ def delete_message():
 
     return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
-"""
-404.htmlを作成したらコメントアウトを外す。
-jinja2.exceptions.TemplateNotFound: error/404.htmlがターミナルに表示されるため。
+
 @app.errorhandler(404)
 def show_error404(error):
     return render_template('error/404.html')
 @app.errorhandler(500)
 def show_error500(error):
     return render_template('error/500.html')
-"""
+
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True)
