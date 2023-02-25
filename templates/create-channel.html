@@ -8,8 +8,34 @@
     <link
       rel="stylesheet"
       href="../static/css/create-channel.css"
+      />
+</head>
+
+
+<header></header>
+<body>
+  <!-- ユーザーがクリックした都道府県の名前を表示 ーーjuja2使用ーー -->
+  <h1>{{prefecture["name_jp"]}}にチャンネルを追加</h1>
+
+  <form class="create-channel" action="/pref/{{prefecture['id']}}" method="POST">
+
+    <input
+      type="text"
+      placeholder="チャンネル名"
+      class="channel-form-input"
+      name="channel-title"
     />
-  </head>
+    <input
+      type="text"
+      placeholder="チャンネルの説明"
+      class="channel-form-input"
+      name="channel-description"
+    />
+    <button id="add-channel-confirmation-btn">登録</button>
+  </form>
+  
+    
+  </div>
 
   <!--ヘッダー-->
   <header></header>

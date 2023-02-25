@@ -22,7 +22,8 @@ CREATE TABLE users (
     password varchar(255) NOT NULL,
     nickname varchar(255),
     profile text,
-    img_id bigint unsigned
+    -- img_pathに変更
+    img_path varchar(255)
 );
 
 
@@ -46,8 +47,9 @@ CREATE TABLE messages (
     cid bigint unsigned not null,
     message text,
     created_at timestamp not null default current_timestamp,
-    img_id bigint unsigned,
-
+    -- img_pathに変更
+    img_path varchar(255),
+	
 	-- 外部キー制約。channelsテーブルのidを参照し、チャンネルが削除された際には、同チャンネル内のメッセージのレコードも削除する。
 	INDEX cid_index (cid),
 	FOREIGN KEY fk_cid (cid)
@@ -79,11 +81,11 @@ CREATE TABLE reactions (
 
 
 -- imagesテーブルを作成する。
-CREATE TABLE images (
-    id varchar(255) PRIMARY KEY,
-    name varchar(255),
-    img_path varchar(255) UNIQUE NOT NULL
-);
+-- CREATE TABLE images (
+--     id varchar(255) PRIMARY KEY,
+--     name varchar(255),
+--     img_path varchar(255) UNIQUE NOT NULL
+-- );
 
 
 
@@ -150,3 +152,5 @@ VALUES
 (45, '宮崎県', 'Miyazaki'),
 (46, '鹿児島県', 'Kagoshima'),
 (47, '沖縄県', 'Okinawa');
+
+
