@@ -7,17 +7,15 @@
   <title>マイ情報編集</title>
   <link
       rel="stylesheet"
-      href="../static/css/user-profile.css"
+      href="../../static/css/user-profile.css"
   />
 </head>
 <!--ヘッダー-->
 <body>
   <h1> My Infomation </h1>
    <h2>{{user.nickname}}さん</h2>
-   
-   <p>ニックネーム：{{user.nickname}}</p>
-   <p>自己紹介文：{{user.profile}}</p>
-   <p> <img src="{{img_path}}"> </p>
+   <p class="introduce">プロフィール：{{user.profile}}</p>
+   <p> <img src="{{img_path}}" class="img"> </p>
    <!-- <p> {{img_path}}</p> -->
 
    <a href="/update_my_info/{{uid}}"}>マイプロフィール編集</a><br>
