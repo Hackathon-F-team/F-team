@@ -5,11 +5,46 @@ body {
 .header {
   background-color: white;
 }
-.appname {
+/* .appname {
   color: #7d8895;
   margin: 0 auto;
   padding: 22px 0 22px 10px;
+} */
+
+.header-list {
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 15px;
 }
+
+.applogo {
+    color: #7D8895;
+    font-size: 30px;
+    list-style: none;
+    display: inline-block;
+    /* padding: 10px; */
+    margin-right: auto;
+}
+
+.applogo a {
+    text-decoration: none;
+    color: #7D8895;
+}
+
+.appname {
+    display: inline-block;
+    color: #7D8895;
+    list-style: none;
+    padding: 15px;
+    
+}
+
+.appname a {
+    text-decoration: none;
+    color: #7D8895;
+    justify-content: flex-end;
+}
+
 .main {
   background-color: rgba(157, 204, 248, 0.95);
   height: calc(100vh - 92px);
