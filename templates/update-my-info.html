@@ -16,12 +16,14 @@
     <!--アイコンイメージ画像　画像を選択したらここに表示されるようにしたい　さらに丸枠に収まるように-->
      <div>
        <h4>あなたの情報を更新できます</h4>
-  <form action="CGIプログラムのURI" method="get">
+  <form method=post enctype=multipart/form-data>
+  <!-- <form action="CGIプログラムのURI" method="get"> -->
         <p>
+          <!-- src="../static/img/6123.png" -->
          <img
           class="img"
           id="preview"
-          src="../static/img/6123.png"
+          src = "{{user.img_path}}" 
           style="max-width:200px;">
         </p>
         <label>        
@@ -42,7 +44,8 @@
       <input type="text" class="introduce-text" name="profile"></input>
       <!--登録ボタン-->
       <div>  
-          <a href="" class="profile-button" onclick="updatemyInfo(); return false;">更新</a>
+        <button type=submit> 登録 </button> <br>
+          <!-- <a href="" class="profile-button" onclick="updatemyInfo(); return false;">更新</a> -->
       </div>
   </form>
 
