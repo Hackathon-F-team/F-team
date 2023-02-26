@@ -14,8 +14,16 @@
 <body>
   <h1> My Infomation </h1>
    <h2>{{user.nickname}}さん</h2>
-   <p class="introduce">プロフィール：{{user.profile}}</p>
-   <p> <img src="{{img_path}}" class="img"> </p>
+   <p class="introduce">プロフィール：
+    
+    {% if user.profile %}
+    {{user.profile}}
+    {% else %}
+    自己紹介文はまだありません
+    {% endif %}
+  
+  </p>
+   <p> <img src="{{img_path}}" class="img" style="max-width:200px;"> </p>
    <!-- <p> {{img_path}}</p> -->
 
    <a href="/update_my_info/{{uid}}"}>マイプロフィール編集</a><br>

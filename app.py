@@ -233,7 +233,13 @@ def show_form_update_my_info(user_id):
     
     # ユーザーIDが一致するユーザー情報を取得する。
     user = dbConnect.getUserbyUid(user_id)
-    return render_template('update-my-info.html', user=user, uid=uid)
+
+    # img_pathを取得する。
+    img_path = user["img_path"]
+    if img_path is None:
+        img_path = "../static/img/icon_user.png"
+
+    return render_template('update-my-info.html', user=user, uid=uid, img_path=img_path)
 
 
 
