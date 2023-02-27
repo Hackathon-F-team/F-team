@@ -7,11 +7,20 @@
   <title>ユーザー情報</title>
   <link
       rel="stylesheet"
-      href="../../static/css/user-profile.css"
+      href="../static/css/user-profile.css"
   />
 </head>
-<!--ヘッダー-->
+
 <body>
+  <!--ヘッダー-->
+  <div class="header">
+    <ul class="header-list">
+        <li class="applogo">タビコミ</li>
+        <li class="appname"><a href="/">日本地図へ</a></li>
+        <li class="appname"><a href="/my_info/{{uid}}">マイページ</a></li>
+    </ul>
+  </div>
+
    <p class="name">ニックネーム：{{user.nickname}}さん</p>
    <p> <img src="{{img_path}}" calss="img"> </p>
    <!-- <p> {{img_path}}</p> -->
