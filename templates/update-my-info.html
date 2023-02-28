@@ -16,7 +16,7 @@
     <!--アイコンイメージ画像　画像を選択したらここに表示されるようにしたい　さらに丸枠に収まるように-->
      <div>
        <h4>あなたの情報を更新できます</h4>
-  <form action="CGIプログラムのURI" method="get">
+       <form method=post enctype=multipart/form-data>
         <p>
          <img
           class="img"
@@ -35,14 +35,17 @@
         </label>
       </div>
       <!--ニックネーム-->
+      <div class="data-txt">
       <div class="introduce">ニックネーム</div>
       <input type="text" class="name-txt" name="nickname"></input>
       <!--自己紹介-->
       <div class="introduce">自己紹介</div>
       <input type="text" class="introduce-text" name="profile"></input>
+      </div>
       <!--登録ボタン-->
-      <div>  
-          <a href="" class="profile-button" onclick="updatemyInfo(); return false;">更新</a>
+      <div>
+        <button type=submit class="profile-button"> 登録 </button> <br>  
+          <!--<a href="/" class="profile-button" onclick="updatemyInfo(); return false;">更新</a>-->
       </div>
   </form>
 

@@ -218,7 +218,7 @@ def my_info(user_id):
     # img_pathを取得する。
     img_path = user["img_path"]
     if img_path is None:
-        img_path = "../static/img/icon_user.png"
+        img_path = "../static/img/6123.png"
 
     return render_template('my-info.html', user=user, uid=uid, img_path=img_path)
 

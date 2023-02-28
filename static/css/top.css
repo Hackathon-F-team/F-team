@@ -54,13 +54,6 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
-.outline p {
-  color: white;
-  font-size: 15px;
-  text-align: center;
-  padding-top: 120px;
-}
 .buttons {
   /* margin-top: 100px; */
   display: flex;
@@ -78,19 +71,19 @@ body {
   height: 60px;
   border: 3px solid #fff8f8;
   box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 20px;
 }
 .signup-button button:hover {
   background-color: #094298;
 }
-.login-button button {
+/* .login-button button {
   background-color: #1bce4e;
   width: 180px;
   height: 60px;
   border: 3px solid #fff8f8;
   box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-}
+} */
 .login-button button:hover {
   background-color: #06551c;
 }
@@ -100,12 +93,12 @@ body {
   font-size: 20px;
   width: 180px;
 }
-.login {
+/* .login {
   text-decoration: none;
   color: white;
   font-size: 20px;
   width: 180px;
-}
+} */
 .appname {
   color: #7d8895;
   margin: 0 auto;
@@ -130,7 +123,6 @@ body {
   }
   
   .outline p {
-    color: white;
     font-size: 15px;
     font-family:Arial, Helvetica, sans-serif;
     letter-spacing:0.12em;
@@ -154,7 +146,7 @@ body {
     height: 60px;
     border: 2px solid #fff8f8;
     box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    border-radius: 20px;
   }
   .signup-button button:hover {
     background-color: #094298;
