@@ -13,6 +13,10 @@
 
   </head>
   
+
+
+
+
 <body>
   <title>chatroom</title>
   
@@ -57,10 +61,25 @@
                     <ion-icon name="trash-bin-outline"></ion-icon>
                   </button>
                 </form>
+
               </div>
             {% else %}
               <div class="messages">
-                <p class="user-name">{{ message.user_name }}</p>
+                <!-- <p class="user-name">{{ message.nickname }}</p>-->
+
+                <p class="user-name">
+        <!-- チャットルームのメッセージの上に、ニックネームとユーザーアイコンを表示する箇所 -->
+                {% if message.user_img_path %}
+                <img src="{{message.user_img_path}}" class="img" style="width:30px; 
+                height:30px;  border-radius:50%;"> 
+                {% else %}
+                <img src="../static/img/icon_user.png" class="img" style="width:30px; 
+                height:30px;  border-radius:50%; ">
+                {%endif%}
+                {{ message.nickname }}</p>
+
+
+
                 <p class="box box-left">{{ message.message }}</p>
               </div>
             {% endif %}
@@ -105,18 +124,6 @@
     src="{{url_for('static',filename='js/modal.js')}}"
     type="text/javascript"
   ></script>
-
-  <script type="text/javascript">
-
-  if (uid === item.uid) {
-    const deleteButton = document.createElement("button");
-    deleteButton.innerText = "削除";
-    deleteButton.classList.add("basic-btn");
-    deleteButton.classList.add("smaller-btn");
-    li.appendChild(deleteButton);
-    deleteButton.addEventListener("click", () => {
-      modalOpen("delete");
-    </script>
 
 
 </body>
