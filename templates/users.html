@@ -6,11 +6,21 @@
     <title>ユーザーリスト</title>
     <link
       rel="stylesheet"
-      href="../../static/css/user-profile.css"
+      href="../static/css/user-profile.css"
     />
   </head>
 
   <body>
+    <!--ヘッダー-->
+    <div class="header">
+      <ul class="header-list">
+          <li class="applogo">tabiComi</li>
+          <li class="appname"><a href="/">日本地図へ</a></li>
+          <li class="appname"><a href="/my_info/{{uid}}">マイページ</a></li>
+          <li class="appname"><a href="/logout">ログアウト</a></li>
+      </ul>
+    </div>
+
     <div class="main-container channelpage">
       <div class="main-content">
         <div class="channel-title">
