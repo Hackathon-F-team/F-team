@@ -141,14 +141,15 @@ a.img-button:hover {
   margin-bottom: 10px;
 }
 
-a.profile-button{
+.profile-button{
     display: block;
     text-align: center;
     text-decoration: none;
     position: relative;
-    width: 120px;
+    width: 150px;
+    height: 60px;
     margin: auto;
-    padding: 1rem 4rem;
+    padding: 1rem 1rem;
     font-weight: bold;
     border-radius: 0.3rem;
     border: 2px dashed green;
@@ -156,7 +157,7 @@ a.profile-button{
     box-shadow: 5px 5px 0 green;
     transition: 0.3s ease-in-out;
   }
-  a.profile-button:hover {
+  .profile-button:hover {
     box-shadow: 0 0 0;
     transform: translate(5px, 5px);
     color: green;
@@ -183,4 +184,17 @@ a.profile-button{
 
   .subtitle{
     font-weight:initial;
+  }
+
+  ul{
+    padding-left: 0;
+  }
+
+  li{
+    list-style: none;
+  }
+
+  .data-txt{
+    margin-top: 40px;
+    margin-bottom: 40px;
   }

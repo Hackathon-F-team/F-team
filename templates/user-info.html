@@ -24,8 +24,10 @@
    <p class="name">ニックネーム：{{user.nickname}}さん</p>
    <p> <img src="{{img_path}}" calss="img" style="max-width:200px;"> </p>
    <!-- <p> {{img_path}}</p> -->
-   <p class="title">プロフィール：
-    
+
+
+   <p class="title">プロフィール</p>
+    <p>
     {% if user.profile %}
     {{user.profile}}
     {% else %}
