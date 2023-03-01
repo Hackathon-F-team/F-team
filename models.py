@@ -270,14 +270,14 @@ class dbConnect:
             cur.close()
 
 
-    # チャンネルIDを指定して、同チャンネルのすべてのメッセージの各種情報を取得する。 nicknameを追加した。
+    # チャンネルIDを指定して、同チャンネルのすべてのメッセージの各種情報を取得する。 nicknameとm.img_path、u.img_pathを追加した。
     def getMessageAll(cid):
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
             # nicknameも取り出す。
             # ORDER BY で並び順を指定。
-            sql = "SELECT id,u.uid, user_name, nickname, message, m.img_path FROM messages AS m INNER JOIN users AS u ON m.uid = u.uid WHERE cid = %s ORDER BY id;"
+            sql = "SELECT id,u.uid, user_name, nickname, message, m.img_path, u.img_path As user_img_path FROM messages AS m INNER JOIN users AS u ON m.uid = u.uid WHERE cid = %s ORDER BY id;"
             cur.execute(sql, (cid))
             messages = cur.fetchall()
             return messages
