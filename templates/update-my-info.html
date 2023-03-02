@@ -7,11 +7,20 @@
   <title>マイ情報編集</title>
   <link
       rel="stylesheet"
-      href="../../static/css/user-profile.css"
+      href="../static/css/user-profile.css"
   />
 </head>
-<!--ヘッダー-->
+
 <body>
+  <!--ヘッダー-->
+  <div class="header">
+    <ul class="header-list">
+        <li class="applogo">tabiComi</li>
+        <li class="appname"><a href="/">日本地図へ</a></li>
+        <li class="appname"><a href="/users">ユーザーリスト</a></li>
+        <li class="appname"><a href="/logout">ログアウト</a></li>
+    </ul>
+  </div>
    <h1>{{user.nickname}}さん</h1>
     <!--アイコンイメージ画像　画像を選択したらここに表示されるようにしたい　さらに丸枠に収まるように-->
      <div>
