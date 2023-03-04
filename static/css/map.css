@@ -18,8 +18,6 @@ body {
   margin-right: 15px;
 }
 
-.header li {
-}
 
 .applogo {
   font-size: 30px;
@@ -66,7 +64,6 @@ h1 {
   width: 68%;
   margin: auto;
   height: auto;
-  z-index: -2;
   text-align: center;
 }
 
