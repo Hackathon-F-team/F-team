@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ユーザー情報</title>
+  <link
+      rel="stylesheet"
+      href="../static/css/user-profile.css"
+  />
+</head>
+
+<body>
+  <!--ヘッダー-->
+  <div class="header">
+    <ul class="header-list">
+        <li class="applogo">tabiComi</li>
+        <li class="appname"><a href="/">日本地図へ</a></li>
+        <li class="appname"><a href="/users">ユーザーリスト</a></li>
+        <li class="appname"><a href="/logout">ログアウト</a></li>
+    </ul>
+  </div>
+
+   <p class="name">ニックネーム：{{user.nickname}}さん</p>
+   <p> <img src="{{img_path}}" class="img" style="max-width:200px;"> </p>
+   <!-- <p> {{img_path}}</p> -->
+
+
+   <p class="title">プロフィール</p>
+    <p>
+    {% if user.profile %}
+    {{user.profile}}
+    {% else %}
+    自己紹介文はまだありません
+    {% endif %}
+  
+  </p>
+
+   <a href="/users"}>ユーザー一覧</a><br>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャンネル作成</title>
+    <link
+      rel="stylesheet"
+      href="../static/css/create-channel.css"
+      />
+</head>
+
+
+<header></header>
+<body>
+  <div class="header">
+    <ul class="header-list">
+        <li class="applogo">tabiComi</li>
+        <li class="appname"><a href="/my_info/{{uid}}">マイページ</a></li>
+        <li class="appname"><a href="/users">ユーザーリスト</a></li>
+        <li class="appname"><a href="/logout">ログアウト</a></li>
+    </ul>
+  </div>
+  
+  <!-- ユーザーがクリックした都道府県の名前を表示 ーーjuja2使用ーー -->
+  <h1>{{prefecture["name_jp"]}}にチャンネルを追加</h1>
+
+  <form class="create-channel" action="/pref/{{prefecture['id']}}" method="POST">
+
+    <input
+      type="text"
+      placeholder="チャンネル名"
+      class="channel-form-input"
+      name="channel-title"
+    />
+    <input
+      type="text"
+      placeholder="チャンネルの説明"
+      class="channel-form-input"
+      name="channel-description"
+    />
+    <button id="add-channel-confirmation-btn">登録</button>
+  </form>
+  
+    
+
+ 
+  </body>
+</html>
+
+

@@ -1,0 +1,336 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-color: white;
+}
+
+.header-list {
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.applogo {
+  font-size: 30px;
+  list-style: none;
+  display: inline-block;
+  margin-right: auto;
+  font-weight: bold;
+  color: #15e01f;
+  text-shadow: 1px -1px 1px #bdbdbd, -1px 2px 1px #737272, -2px 4px 1px #767474,
+      -3px 6px 1px #787777, -4px 8px 1px #424242, -5px 10px 1px #616161,
+      -6px 12px 1px #757575, -7px 14px 1px #9e9e9e, -8px 16px 1px #bdbdbd,
+      -9px 18px 1px #e0e0e0;
+  color:rgb(242, 227, 60);
+}
+
+.applogo a {
+    text-decoration: none;
+    color: #7D8895;
+}
+
+.appname {
+    display: inline-block;
+    color: #7D8895;
+    list-style: none;
+    padding: 15px;
+    
+}
+
+.appname a {
+    text-decoration: none;
+    color: #7D8895;
+    justify-content: flex-end;
+}
+
+.main {
+  background-color: rgba(157, 204, 248, 0.95);
+  height: calc(100vh - 92px);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.buttons {
+  /* margin-top: 100px; */
+  display: flex;
+  justify-content: center;
+}
+.signup-button {
+  margin-right: 50px;
+}
+.login-button {
+  margin-left: 50px;
+}
+.signup-button button {
+  background-color: #7c41e3;
+  width: 180px;
+  height: 60px;
+  border: 3px solid #fff8f8;
+  box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+.signup-button button:hover {
+  background-color: #094298;
+}
+/* .login-button button {
+  background-color: #1bce4e;
+  width: 180px;
+  height: 60px;
+  border: 3px solid #fff8f8;
+  box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+} */
+.login-button button:hover {
+  background-color: #06551c;
+}
+.signup {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  width: 180px;
+}
+/* .login {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  width: 180px;
+} */
+.appname {
+  color: #7d8895;
+  margin: 0 auto;
+  padding: 22px 0 22px 10px;
+}
+  .header {
+    background-color: white;
+  }
+  .appname {
+    color: #7d8895;
+    margin: 0 auto;
+    padding: 22px 0 22px 10px;
+  }
+  .main {
+    background-color: rgba(157, 204, 248, 0.95);
+    height: calc(100vh - 92px);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .outline p {
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing:0.12em;
+    text-align: center;
+    padding-top: 130px;
+  }
+  .buttons {
+    /* margin-top: 100px; */
+    display: flex;
+    justify-content: center;
+  }
+  .signup-button {
+    margin-right: 50px;
+  }
+  .login-button {
+    margin-left: 50px;
+  }
+  .signup-button button {
+    background-color: #7c41e3;
+    width: 190px;
+    height: 60px;
+    border: 2px solid #fff8f8;
+    box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .signup-button button:hover {
+    background-color: #5F4894;
+    opacity: .7;
+  }
+
+  .signup-button button:active {
+    margin-top: 0.2em;
+  }
+  .login-button button {
+    background-color: #1bce4e;
+    width: 190px;
+    height: 60px;
+    border: 2px solid #fff8f8;
+    box-shadow: 7px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .login-button button:hover {
+    background-color: #06551c;
+    opacity: .7;
+  }
+
+  .login-button button:active {
+    margin-top: 0.2em;
+  }
+  
+  .signup {
+    text-decoration: none;
+    color: white; 
+    font-size: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing:0.12em;
+    width: 180px;
+    display:block;
+    
+  }
+  .login {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: monospace;
+    letter-spacing:0.12em;
+    width: 180px;
+    display:block;
+    
+  }
+  .app-name {
+    font-size: 60em;
+    text-align: center;
+    line-height: 0.95em;
+    font-weight: bold;
+    color: #15e01f;
+    text-shadow: 1px -1px 1px #bdbdbd, -1px 2px 1px #737272, -2px 4px 1px #767474,
+      -3px 6px 1px #787777, -4px 8px 1px #424242, -5px 10px 1px #616161,
+      -6px 12px 1px #757575, -7px 14px 1px #9e9e9e, -8px 16px 1px #bdbdbd,
+      -9px 18px 1px #e0e0e0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color:rgb(242, 227, 60);
+    text-align: center;
+    font-size: 130px;
+    margin: 0;
+    width: max-content;
+  }
+  p {
+    font-size: 5px;
+  }
+  .globe {
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    border-radius: 50%;
+    position: absolute;
+    background: url("https://1-notes.com/wp-content/uploads/2021/06/world-map.png")
+      repeat-x;
+    background-size: auto 100%;
+    animation: rotate-anim 50s linear infinite;
+    box-shadow: -20px -10px 40px rgba(0, 0, 0, 0.75) inset;
+    left: 45%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    }
+
+  
+  .main-logo {
+    position: relative;
+    height: 100px;
+  }
+  .globe:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+    width: 90px;
+    height: 4px;
+    border-radius: 50%;
+    background: #000;
+    filter: blur(4px);
+  }
+  @keyframes rotate-anim {
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  .dtable {
+    display: table;
+    table-layout: fixed; /* ブロックレベル要素を均等に配置 */
+    width: 400px; /* ブロックレベル要素全体の幅 */
+  }
+  .dtable_c {
+    border: 1px solid #666;
+  }
+
+  .app-name {
+  font-size: 30em;
+  text-align: center;
+  line-height: 0.95em;
+  font-weight: bold;
+  color: #15e01f;
+  text-shadow: 1px -1px 1px #bdbdbd, -1px 2px 1px #737272, -2px 4px 1px #767474,
+    -3px 6px 1px #787777, -4px 8px 1px #424242, -5px 10px 1px #616161,
+    -6px 12px 1px #757575, -7px 14px 1px #9e9e9e, -8px 16px 1px #bdbdbd,
+    -9px 18px 1px #e0e0e0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color:rgb(242, 227, 60);
+  text-align: center;
+  font-size: 130px;
+  margin: 0;
+  width: max-content;
+}
+p {
+  font-size: 5px;
+}
+.globe {
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  border-radius: 50%;
+  position: absolute;
+  background: url("https://1-notes.com/wp-content/uploads/2021/06/world-map.png")
+    repeat-x;
+  background-size: auto 100%;
+  animation: rotate-anim 50s linear infinite;
+  box-shadow: -20px -10px 40px rgba(0, 0, 0, 0.75) inset;
+  left: 45%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  }
+
+
+.main-logo {
+  position: relative;
+  height: 100px;
+}
+.globe:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  margin: auto;
+  width: 90px;
+  height: 4px;
+  border-radius: 50%;
+  background: #000;
+  filter: blur(4px);
+}
+@keyframes rotate-anim {
+  100% {
+    background-position: -200% 0;
+  }
+}
+.dtable {
+  display: table;
+  table-layout: fixed; /* ブロックレベル要素を均等に配置 */
+  width: 400px; /* ブロックレベル要素全体の幅 */
+}
+.dtable_c {
+  border: 1px solid #666;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>トップページ</title>
+    <link rel="stylesheet" href="../../static/css/errer.css" />
+  
+
+    
+  </head>
+
+    <body class="error">
+    <div class="error-wrapper">
+    <div class="error-content">
+    <div>
+    <span class="error-num">4</span>
+    <div class="eye"></div>
+    <span class="error-num">4</span>
+    </div>
+    <!-- ページが見つかりませんと表示する　& index.htmlに戻るリンクを表示している -->
+    <div class="error-description error404or500">
+    <p>ページが見つかりません</p>
+    <button class="basic-btn error-btn">
+    <a href="{{ url_for('index') }}"> 戻る </a>
+    </button>
+    </div>
+    </div>
+    </div>
+   
+
+    </body>
+    <script
+    src="{{url_for('static',filename='js/error.js')}}"
+    type="text/javascript"
+    ></script>
+</html>

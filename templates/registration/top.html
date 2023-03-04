@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>トップページ</title>
+    <link rel="stylesheet" href="../../static/css/top.css" />
+    <link
+      href="https://fonts.googleapis.com/earlyaccess/nikukyu.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <div class="header">
+      <ul class="header-list">
+          <li class="applogo">tabiComi</li>
+      </ul>
+    </div>
+    <div class="main">
+      <div>
+        <div class="main-logo">
+          <div class="globe"></div>
+          <h1 class="app-name">tabiComi
+
+          </h1>
+        </div>
+        <div class="outline">
+          <p class= "subtitle">
+            旅をしてつながろう
+            <br />
+            毎日が旅のように
+            <br />
+            日本中の旅好きが集まるコミュニティ
+          </p>
+        </div>
+        <div class="buttons">
+          <div class="signup-button">
+            <button>
+              <a href="{{ url_for('signup') }}" class="signup">新規登録</a>
+            </button>
+          </div>
+          <div class="login-button">
+            <button>
+              <a href="{{ url_for('login') }}" class="login">ログイン</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+.header {
+  lightgoldenrodyellow;
+}
+
+.header-list {
+  display:flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+.header li {
+}
+
+.applogo {
+    font-size: 30px;
+    list-style: none;
+    display: inline-block;
+    margin-right: auto;
+    font-weight: bold;
+    color: #15e01f;
+    text-shadow: 1px -1px 1px #bdbdbd, -1px 2px 1px #737272, -2px 4px 1px #767474,
+        -3px 6px 1px #787777, -4px 8px 1px #424242, -5px 10px 1px #616161,
+        -6px 12px 1px #757575, -7px 14px 1px #9e9e9e, -8px 16px 1px #bdbdbd,
+        -9px 18px 1px #e0e0e0;
+    color:rgb(242, 227, 60);
+  }
+
+.applogo a {
+  text-decoration: none;
+  color: #7D8895;
+}
+
+.appname {
+  display: inline-block;
+  color: #7D8895;
+  list-style: none;
+  padding: 15px;
+  
+}
+
+.appname a {
+  text-decoration: none;
+  color: #7D8895;
+  justify-content: flex-end;
+}
+
+.navigation {
+  width: 100%;
+  height: 30px;
+}
+.navigation a {
+  color: #fff;
+}
+
+header-icon{
+  width: 150px;
+  height: auto;
+}
+
+body {
+  width:100%; /*ページ全体の幅は100%と指定する*/	
+  text-align:center; /*ページ全体を中央揃えにする*/
+  background-color: lightgoldenrodyellow;
+}
+
+.title{
+  font-weight: bold;
+  font-size: large;
+}
+.icon{
+  width: 300px;
+  height: 200px; 
+  margin-bottom: 20px;
+
+}
+
+.img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 200px;       /* ※縦横を同値に */
+}
+
+.img-button[type="file"] {
+    display: none;
+}
+  
+label {
+    padding: 10px 40px;
+    color: #ffffff;
+    background-color: #384878;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: small;
+    letter-spacing: 0.12em;
+}
+
+a.img-button {
+  display: none;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+  margin: auto;
+  padding: 1rem 4rem;
+  font-weight: bold;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 100vh;
+  color: #333;
+  border: 1px solid #999;
+  text-shadow: 0 1px #fff;
+  box-shadow: 0 3px 2px 1px #fcfcfc, 0 4px 6px #cecfd1, 0 -2px 2px #cecfd1, 0 -4px 2px #eee, inset 0 0 2px 2px #cecfd1;
+  transition: 0.5s;
+}
+a.img-button:hover {
+  opacity: 0.5;
+}
+
+.name{
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.name-txt{
+  width: 250px;
+  background: #EEE;
+  
+}
+
+.introduce{
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.introduce-text{
+  width: 250px;
+  height: 80px;
+  background: #EEE;
+  margin-bottom: 10px;
+}
+
+.profile-button{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    width: 150px;
+    height: 60px;
+    margin: auto;
+    padding: 1rem 1rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    border: 2px dashed green;
+    color: green;
+    box-shadow: 5px 5px 0 green;
+    transition: 0.3s ease-in-out;
+  }
+  .profile-button:hover {
+    box-shadow: 0 0 0;
+    transform: translate(5px, 5px);
+    color: green;
+  }
+
+  .channel-title {
+    position: relative;
+  padding: 0.35em 0.5em;
+  background: #b6e9ff;
+  color: #393939;
+  }
+
+  .channel-title:before {
+    content: " ";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: -webkit-calc(100% - 16px);
+    width: calc(100% - 16px);
+    height: 0;
+    border: solid 20px transparent;
+    border-bottom-color: #b2ddf0;
+  }
+
+  .subtitle{
+    font-weight:initial;
+  }
+
+  ul{
+    padding-left: 0;
+  }
+
+  li{
+    list-style: none;
+  }
+
+  .data-txt{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }

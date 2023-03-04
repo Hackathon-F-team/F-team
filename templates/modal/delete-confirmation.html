@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャンネル作成</title>
+    <link
+      rel="stylesheet"
+      href="../static/css/modal.css"
+      />
+</head>
+
+
+
+
+<body>
+<!----------------ただのコピペ。ヘッダーとかいらないのか不明------------------->
+
+
+<!----------------delete-cannel-modalというidをつけてグループ化（設定）------------------->
+<div id="delete-channel-modal" class="modal">
+
+    <!----------delete-channel-modalの中でmodalという名前のグループ（設定）---------->
+      <div class="modal-content">
+    
+    <!---------modalの中でheaderのグループ（設定）--------->
+        <div class="modal-header">
+    
+         <!----タイトル----->
+          <div class="head5">
+          <h5>本当に削除しますか？</h5> 
+          </div>
+        
+         <!----閉じるための×ボタン----->
+          <span class="modalClose" id="delete-page-close-btn">×</span>
+        </div>
+    <!---------modalの中でheaderのグループ（設定）終わり--------->
+    
+    <!---------modalの中でbodyのグループ（設定）--------->
+        <div class="modal-body">
+          <p>削除ボタンを押すとチャンネルが消えます</p>
+          <p>本当によろしいですか？</p>
+          <!---削除ボタン----->
+          <a id="delete-confirm-link">
+            <button id="delete-channel-confirmation-btn">削除</button>
+          </a>
+        </div>
+    <!---------modalの中でbodyのグループ（設定）--------->
+      </div>
+    <!----------delete-channel-modalの中でmodalという名前のグループ（設定）---------->
+    </div>
+    <!----------------delete-cannel-modalというidをつけてグループ化（設定）終わり------------------->
+
+  </body>
+
+
+</html>
+

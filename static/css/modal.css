@@ -1,0 +1,150 @@
+.modal {
+    display: none; /*ディスプレイは存在しない（透明？）上画像の端の部分*/
+    position: fixed;  /*flexコンテナと呼ばれるものを設定*/
+    z-index: 1;  /*レイヤが一番奥*/
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;  /*内容が溢れたら自動で調節する*/
+    background-color: rgba(240, 240, 240, 0.5);
+  }
+  
+  
+  
+  
+  .modal-content {/*実際のmodalウィンドウの部分*/
+    background-color: #fbfaf5;
+    margin: 20% auto;
+    width: 70%;
+    border-radius: 20px; /*楕円形の比率*/
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen; /*アニメーションの定義名は半角英数字で自由に決めることが可能*/
+    animation-duration: 1s; /*アニメーション1回分の時間の長さを指定*/
+    position: relative; /*相対的の場所を変更*/
+  }
+  
+  @keyframes modalopen {
+    from {
+      opacity: 0;  /*ここに開始のCSSを記述*/
+    }
+    to {
+      opacity: 1;  /*ここに終了のCSSを記述*/
+    }
+  }
+  
+  
+  
+  
+  
+  .modal-header h1 {  /*modalウィンドウのヘッダーのタイトルの共通部分*/
+    margin: 1rem 0;
+  }
+  
+  
+  
+  
+  .modal-header { /*modalウィンドウのヘッダーの共通部分（右上のチャンネルの追加）*/
+    background: #fbfaf5;
+    padding: 3px 15px 3px 32px; /*#パディング領域。余白のようなもの。上にリンク*/
+    border-radius: 20px 20px 0 0;
+    color: #131313;
+    display: flex;  /*flexコンテナを作成*/
+    justify-content: space-between; /*flexコンテナの中身を横並びにしている。*/ 
+  }
+  
+  .modal-header h5 span {
+    z-index: 4;
+
+  }
+  
+  .modalClose {
+    font-size: 2rem;
+    background-color: #fbfaf5;
+
+  }
+  
+  .modalClose:hover {
+    cursor: pointer;
+  }
+  
+  .modal-body { /*modalウィンドウ全体。裏に白いのがある感じかも？）*/
+    padding: 10px 20px; /*#パディング領域。余白のようなもの。上にリンク*/
+    display: flex;  /*flexコンテナを作成*/
+    flex-direction: column; /*flexコンテナの中身は縦書き*/
+    align-items: center; /*align-itemsはflexコンテナ内の要素を垂直方向のどの位置に配置するかを指定。*/
+    color: #2f2f2f;/*色白*/
+
+  }
+  
+  .head5{
+  background-color: #fbfaf5;
+  }
+
+  
+  .channel-form-input { /*modalウィンドウの入力部分。*/
+    width: 70%;  /*横幅*/
+    background-color:  #2f2f2f;/*透明にしているtransparent;*/
+    border-bottom: 1px solid #2f2f2f; /*入力の下線部分*/
+    box-shadow: 0 10px 15px -12px #2f2f2f; /*上の影*/
+    margin-top: 8px; 
+    margin-bottom: 20px; /*余白の調整*/
+    padding-bottom: 10px; /*パディング領域。余白のようなもの。上にリンク*/
+    color: #fbfaf5;
+  }
+  
+  #bar { /*入力の下線部分かも*/
+    height: 39px;
+    width: 32px;
+  }
+
+  
+  .modal-body button { /*modalウィンドウのボタンの共有事項*/
+    background-color: #fbfaf5;
+  }
+  
+  .modal-body button:hover { /*modalウィンドウのボタンのホバー機能の共有事項*/
+    background-color: #fbfaf5;
+  }
+  
+  
+
+/*ほそまつボタンの色を変えるために実験中*/
+  .add-page-close-btn{
+  background-color: #fbfaf5;
+
+  }
+
+  .delete-page-close-btn{
+    background-color: #fbfaf5;
+
+  }
+  
+  .delete-channel-confirmation-btn{
+    background-color: #fbfaf5;
+
+  }
+
+
+
+
+  
+  /*以下はメディアクエリ。ユーザが使用しているディスプレイに応じて異なるCSSを適用させる*/
+  
+  @media screen and (max-width: 639px) {
+    .modal-content {
+      margin: 35% auto;
+    }
+    #modal-gif {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 640px) and (max-width: 1023px) {
+    .modal-content {
+      width: 95%;
+    }
+    .modal {
+      padding-left: 80px;
+    }
+  }

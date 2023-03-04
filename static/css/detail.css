@@ -1,0 +1,277 @@
+*{
+    float: none;
+    position: static;     
+    font-family: "Sawarabi Mincho", serif;
+    font-family: "DotGothic16", sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    }
+
+    .header-list {
+      display:flex;
+      justify-content: flex-end;
+      margin-right: 15px;
+    }
+    
+    .header li {
+    }
+    
+    .applogo {
+        font-size: 30px;
+        list-style: none;
+        display: inline-block;
+        margin-right: auto;
+        font-weight: bold;
+        color: #15e01f;
+        text-shadow: 1px -1px 1px #bdbdbd, -1px 2px 1px #737272, -2px 4px 1px #767474,
+            -3px 6px 1px #787777, -4px 8px 1px #424242, -5px 10px 1px #616161,
+            -6px 12px 1px #757575, -7px 14px 1px #9e9e9e, -8px 16px 1px #bdbdbd,
+            -9px 18px 1px #e0e0e0;
+        color:rgb(242, 227, 60);
+      }
+    
+    .applogo a {
+      text-decoration: none;
+      color: #7D8895;
+    }
+    
+    .appname {
+      display: inline-block;
+      color: #7D8895;
+      list-style: none;
+      padding: 15px;
+      
+    }
+    
+    .appname a {
+      text-decoration: none;
+      color: #7D8895;
+      justify-content: flex-end;
+    }
+
+    
+.main-container {
+min-height: 100vh;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow-x: hidden;
+}
+
+
+.chat-box {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px #7e5a3eb3;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #chat-header {
+    background-color: #373737;
+    height: 8vh;
+    width: 60vw;
+    position: fixed;
+    top: 0;
+    color: #ffffff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 20px;
+    z-index: 2;
+    box-shadow: 0px 10px 10px 0px #7e5a3eb3;
+  }
+  
+  #chatroom-name {
+    font-size: larger;
+  }
+  
+  #chatroom-description {
+    font-size: small;
+  }
+  
+  /* メッセージエリア */
+  
+  #message-area {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 9vh;
+    padding-right: 20px;
+    padding-bottom: 20vh + 10px;
+    padding-left: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-size: 8px;
+    color: #7e5a3eb3;
+  }
+  
+  .my-messages {
+    display: flex;
+  }
+  
+  .delete-message-btn {
+    background-color: #3e4149;
+    height: 40px;
+    width: 40px;
+    line-height: 47px;
+    padding: 0;
+    margin: 0;
+    bottom: 8px;
+    right: 8px;
+  }
+  
+  .delete-message-btn ion-icon {
+    font-size: 1rem;
+  }
+  
+  .box {
+    position: relative;
+    width: 60%;
+    margin: 0;
+    padding: 0.7em 0 0.4em 1em;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+  
+  .box-left {
+    border: 1px solid #373737a9;
+    background-color: #4d4d4d;
+  }
+  
+  .box-right {
+    border: 1px solid #3a437c;
+    background-color: #454a6a;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+  .box-left:before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #333;
+    content: "";
+  }
+  
+  .box-right:before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #333;
+    content: "";
+  }
+  
+  /* ========================================================== */
+  
+  .typing-box-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: calc(100vw + 0px);
+    height: 15vh;
+    background-color: rgba(68, 68, 68, 0.75);
+    background-size: contain;
+    border-top: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  .typing-box {
+    backdrop-filter: white(16px);
+    -webkit-backdrop-filter: white(16px);
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    background-color: #adadad;
+    border-radius: 16px;
+  }
+  
+  .typing-box textarea {
+    /*ここはbase.cssからコピーしたもの*/
+    resize: none;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+
+
+    backdrop-filter: white(16px);
+    -webkit-backdrop-filter: white(16px);
+    width: 100%;
+    padding: 4px 55px 4px 12px;
+    border-radius: 16px;
+  }
+  
+  .typing-box textarea:focus {
+    cursor: pointer;
+  }
+  
+  #add-message-btn {
+    position: absolute;
+    background-color: #3e4149;
+    height: 40px;
+    width: 40px;
+    line-height: 47px;
+    padding: 0;
+    margin: 0;
+    bottom: 8px;
+    right: 8px;
+  }
+  
+  #add-message-btn ion-icon {
+    font-size: 1.3rem;
+  }
+  
+
+  @media screen and (max-width: 550px) {
+    #chatroom-description {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 639px) {
+    .chat-box {
+      padding-left: 0;
+    }
+  
+    .typing-box-wrapper,
+    #chat-header {
+      width: 100%;
+    }
+  
+    .typing-box textarea {
+      padding: 0;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 640px) {
+    .box {
+      width: 40%;
+    }
+  }

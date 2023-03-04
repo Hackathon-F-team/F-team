@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マイ情報編集</title>
+  <link
+      rel="stylesheet"
+      href="../static/css/user-profile.css"
+  />
+</head>
+<body>
+  <!--ヘッダー-->
+  <div class="header">
+    <ul class="header-list">
+        <li class="applogo">tabiComi</li>
+        <li class="appname"><a href="/">日本地図へ</a></li>
+        <li class="appname"><a href="/users">ユーザーリスト</a></li>
+        <li class="appname"><a href="/logout">ログアウト</a></li>
+    </ul>
+  </div>
+  <h1> My Infomation </h1>
+   <h2>{{user.nickname}}さん</h2>
+   <p class="introduce">プロフィール：
+    
+    {% if user.profile %}
+    {{user.profile}}
+    {% else %}
+    自己紹介文はまだありません
+    {% endif %}
+  
+  </p>
+   <p> <img src="{{img_path}}" class="img" style="max-width:200px;"> </p>
+   <!-- <p> {{img_path}}</p> -->
+   <a href="/update_my_info/{{uid}}"}>マイプロフィール編集</a><br>
+   <a href="/users"}>ユーザー一覧</a><br>
+
+</body>
+</html>

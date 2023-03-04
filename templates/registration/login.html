@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログインページ</title>
+    <link rel="stylesheet" href="../../static/css/login.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Hello.</h1>
+        <div class="signup">
+            <form class="signup-form" method="post">
+                <p class="email">メールアドレス</p>
+                <div><input type="email" placeholder="aaaa@email.com" name="email"></div>
+                <p class="password">パスワード</p>
+                <div><input type="password" placeholder="abcd123" name="password"></div>
+                <button>ログイン</button>
+                <div class="tologin"><a href="{{ url_for('signup') }}">登録画面へ</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
