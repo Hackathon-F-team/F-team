@@ -131,7 +131,11 @@
     -webkit-text-stroke: 0.2px #00154c;
   }
  
-  
+  .smaller-btn:hover {
+    opacity: 0.7;
+    background-image: linear-gradient(to right, rgba(244, 119, 177, 0.3) 0%, rgba(243, 125, 241, 0.5) 100%);
+  }
+
   img {
     max-width: 100%;
     height: auto;
