@@ -1,9 +1,13 @@
 @charset "utf-8";
+@import  url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body{
-  background-color:  #B4D6FF;
-  width:100%; /*ページ全体の幅は100%と指定する*/	
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100vw;
   text-align:center; /*ページ全体を中央揃えにする*/
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,1) 100%),url('../img/bgimg.jpg');
+  background-size: cover;
 }
 
 .header-list {
@@ -39,6 +43,12 @@ color:rgb(242, 227, 60);
   padding: 15px;
   font-size: 20px;
   
+}
+
+h1 {
+  font-size: 46px;
+  color: white;
+  -webkit-text-stroke: 1px #00154c;
 }
 
 .mapname{
@@ -118,4 +128,57 @@ a.btn--yellow:active {
 
 .channel-form-inputdetaile{
   width: 250px;
+}
+
+
+
+
+
+
+
+
+#add-channel-confirmation-btn {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+#add-channel-confirmation-btn::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+background-color: rgba(107,182,255, 0.2);
+transition: all 0.3s;
+}
+#add-channel-confirmation-btn:hover::before {
+opacity: 0;
+transform: scale(0.4, 0.4);
+}
+#add-channel-confirmation-btn::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+opacity: 0;
+transition: all 0.3s;
+border: 2px solid rgb(107,182,255, .4);
+transform: scale(1.2, 1.2);
+}
+#add-channel-confirmation-btn:hover::after {
+opacity: 1;
+transform: scale(1, 1);
 }

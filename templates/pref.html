@@ -8,8 +8,10 @@
 
     <link
       rel="stylesheet"
-      href="../static/css/pref.css"
+      href="../static/css/prefectures/pref{{prefecture.id}}.css"
     />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
   </head>
 
@@ -26,176 +28,182 @@
     </div>
 
 
-  <div class="main-container channelpage">
+    <div class="main-container channelpage">
 
-    <div class="main-content">
-
-      <div class="channel-title">
-
-        <h1>{{prefecture["name_jp"]}}のチャンネル一覧</h1>
-
+      <div class="main-content">
+  
+        <div class="channel-title">
+  
+          <h1>All Channels from {{prefecture["name_en"]}}</h1>
+  
+          
+            <!-- 一覧を表示させる -->
         
-          <!-- 一覧を表示させる -->
-      
+            <ul class="channel-box"></ul>
+        <div class="５件ずつ表示">  
+          <div class="pagination-container">
+            <p id="prev">前の５件へ
+            <p class="pagination">
+            <p id="next">次の５件へ</p>
+          </div>
+        </div>
+        
+  
+            <!-- チャンネル追加ページへのリンク -->
+          <!-- <div class="addchannel-button">
+            <button onclick="location.href='/create_channel/{{prefecture.id}}'">チャンネル作成</button>      
+          </div> -->
+  
+          <!-- <a href="/create_channel/{{prefecture.id}}" class="btn btn-gradient"><span>チャンネル作成</span></a> -->
+  
+          <button class="btn" onclick="location.href='/create_channel/{{prefecture.id}}'">
+            <span class="btn-text-one">wanna Create?</span>
+            <span class="btn-text-two">Create channel!</span>
+          </button>
+  
+  <!-- モーダルの読み込み -->
           <ul class="channel-box"></ul>
-      <div class="５件ずつ表示">  
-        <div class="pagination-container">
-          <p id="prev">前の５件へ
-          <p class="pagination">
-          <p id="next">次の５件へ</p>
+        {% include 'modal/delete-confirmation.html' %}
+  
+  <!-- モーダル削除ボタンの取り込み -->
+        <button id="add-channel-btn" disabled style="visibility:hidden">チャンネル追加</button>
+        {% include 'modal/add-channel.html' %}
+  
+  
         </div>
       </div>
-      
-
-          <!-- チャンネル追加ページへのリンク -->
-        <div class="addchannel-button">
-          <button onclick="location.href='/create_channel/{{prefecture.id}}'">チャンネル作成</button>
-      
-        </div>
-
-<!-- モーダルの読み込み -->
-        <ul class="channel-box"></ul>
-      {% include 'modal/delete-confirmation.html' %}
-
-<!-- モーダル削除ボタンの取り込み -->
-      <button id="add-channel-btn" disabled style="visibility:hidden">チャンネル追加</button>
-      {% include 'modal/add-channel.html' %}
-
-
-      </div>
-    </div>
-  </div>     
-
-  <script type="text/javascript">
-    const channels = JSON.parse('{{ channels|tojson }}')
-    const uid = JSON.parse('{{ uid|tojson }}');
+    </div>     
+  
+    <script type="text/javascript">
+      const channels = JSON.parse('{{ channels|tojson }}')
+      const uid = JSON.parse('{{ uid|tojson }}');
+    </script>
+  
+  
+    <script type="text/javascript">
+    const pagination = () => {
+      // 初期設定
+      let page = 1; // 今何ページ目にいるか
+      const STEP = 5; // ステップ数（1ページに表示する項目数）
+      // 全ページ数 channelsリストの総数/ステップ数の余りの有無で場合分け
+      // 余りがある場合はページを１つ余分に追加する
+      const TOTAL =
+        channels.length % STEP == 0
+          ? channels.length / STEP
+          : Math.floor(channels.length / STEP) + 1;
+    
+      // <ul class="pagination"></ul> の中身(li)を書き換える
+      const paginationUl = document.querySelector(".pagination");
+      let pageCount = 0;
+      while (pageCount < TOTAL) {
+        let li = document.createElement("li");
+        li.innerText = pageCount + 1;
+        paginationUl.appendChild(li);
+        pageCount++;
+      }
+    
+      // <ul class="channel-box"></ul> の中身(li)を書き換える
+      const show = (page, STEP) => {
+        const ul = document.querySelector(".channel-box");
+        // 一度リストを空にする
+        ul.innerHTML = "";
+    
+        const first = (page - 1) * STEP + 1;
+        const last = page * STEP;
+        console.log(uid);
+        channels.forEach((item, i) => {
+          if (i < first - 1 || i > last - 1) return;
+          const a = document.createElement("a");
+          const li = document.createElement("li");
+          const url = `/detail/${item.id}`;
+          a.innerText = item.name;
+          a.setAttribute("href", url);
+          li.appendChild(a);
+  
+  
+  
+  
+  
+          //// もしチャンネル作成者uidとuidが同じだったら削除ボタンを追加
+          if (uid === item.uid) {
+            const deleteButton = document.createElement("button");
+            deleteButton.innerText = "Delete";
+            deleteButton.classList.add("basic-btn");
+            deleteButton.classList.add("smaller-btn");
+            li.appendChild(deleteButton);
+            deleteButton.addEventListener("click", () => {
+              modalOpen("delete");
+  
+  
+  
+              const confirmationButtonLink = document.getElementById(
+                "delete-confirm-link"
+              ); // aタグ
+  
+              
+              const url = `/delete/${item.id}`;
+              confirmationButtonLink.setAttribute("href", url);
+            });
+          }
+          /////
+          ul.appendChild(li);
+        });
+      };
+      // pagination内で現在選択されているページの番号に色を付ける
+      const colorPaginationNum = () => {
+        // <ul class="pagination"></ul>内の<li></li>を全て取得し、配列に入れる
+        // ループさせて一度全ての<li></li>から　class="colored"を削除
+        const paginationArr = [...document.querySelectorAll(".pagination li")];
+        paginationArr.forEach((page) => {
+          page.classList.remove("colored");
+        });
+        // 選択されているページに　class="colored"を追加（背景色が変わる）
+        paginationArr[page - 1].classList.add("colored");
+      };
+    
+      // 最初に1ページ目を表示
+      show(page, STEP);
+    
+      // 前ページ遷移
+      document.getElementById("prev").addEventListener("click", () => {
+        if (page <= 1) return;
+        page = page - 1;
+        show(page, STEP);
+        colorPaginationNum();
+      });
+    
+      // 次ページ遷移
+      document.getElementById("next").addEventListener("click", () => {
+        if (page >= channels.length / STEP) return;
+        page = page + 1;
+        show(page, STEP);
+        colorPaginationNum();
+      });
+    };
+    
+    window.onload = () => {
+      pagination();
+    };
+  
+  
+  
   </script>
-
-
-  <script type="text/javascript">
-  const pagination = () => {
-    // 初期設定
-    let page = 1; // 今何ページ目にいるか
-    const STEP = 5; // ステップ数（1ページに表示する項目数）
-    // 全ページ数 channelsリストの総数/ステップ数の余りの有無で場合分け
-    // 余りがある場合はページを１つ余分に追加する
-    const TOTAL =
-      channels.length % STEP == 0
-        ? channels.length / STEP
-        : Math.floor(channels.length / STEP) + 1;
   
-    // <ul class="pagination"></ul> の中身(li)を書き換える
-    const paginationUl = document.querySelector(".pagination");
-    let pageCount = 0;
-    while (pageCount < TOTAL) {
-      let li = document.createElement("li");
-      li.innerText = pageCount + 1;
-      paginationUl.appendChild(li);
-      pageCount++;
-    }
+  <!-- モーダルの読み込み -->
+  <script
+    src="{{url_for('static',filename='js/modal.js')}}"
+    type="text/javascript"
+    ></script>
   
-    // <ul class="channel-box"></ul> の中身(li)を書き換える
-    const show = (page, STEP) => {
-      const ul = document.querySelector(".channel-box");
-      // 一度リストを空にする
-      ul.innerHTML = "";
   
-      const first = (page - 1) * STEP + 1;
-      const last = page * STEP;
-      console.log(uid);
-      channels.forEach((item, i) => {
-        if (i < first - 1 || i > last - 1) return;
-        const a = document.createElement("a");
-        const li = document.createElement("li");
-        const url = `/detail/${item.id}`;
-        a.innerText = item.name;
-        a.setAttribute("href", url);
-        li.appendChild(a);
-
-
-
-
-
-        //// もしチャンネル作成者uidとuidが同じだったら削除ボタンを追加
-        if (uid === item.uid) {
-          const deleteButton = document.createElement("button");
-          deleteButton.innerText = "削除";
-          deleteButton.classList.add("basic-btn");
-          deleteButton.classList.add("smaller-btn");
-          li.appendChild(deleteButton);
-          deleteButton.addEventListener("click", () => {
-            modalOpen("delete");
-
-
-
-            const confirmationButtonLink = document.getElementById(
-              "delete-confirm-link"
-            ); // aタグ
-
-            
-            const url = `/delete/${item.id}`;
-            confirmationButtonLink.setAttribute("href", url);
-          });
-        }
-        /////
-        ul.appendChild(li);
-      });
-    };
-    // pagination内で現在選択されているページの番号に色を付ける
-    const colorPaginationNum = () => {
-      // <ul class="pagination"></ul>内の<li></li>を全て取得し、配列に入れる
-      // ループさせて一度全ての<li></li>から　class="colored"を削除
-      const paginationArr = [...document.querySelectorAll(".pagination li")];
-      paginationArr.forEach((page) => {
-        page.classList.remove("colored");
-      });
-      // 選択されているページに　class="colored"を追加（背景色が変わる）
-      paginationArr[page - 1].classList.add("colored");
-    };
   
-    // 最初に1ページ目を表示
-    show(page, STEP);
   
-    // 前ページ遷移
-    document.getElementById("prev").addEventListener("click", () => {
-      if (page <= 1) return;
-      page = page - 1;
-      show(page, STEP);
-      colorPaginationNum();
-    });
   
-    // 次ページ遷移
-    document.getElementById("next").addEventListener("click", () => {
-      if (page >= channels.length / STEP) return;
-      page = page + 1;
-      show(page, STEP);
-      colorPaginationNum();
-    });
-  };
   
-  window.onload = () => {
-    pagination();
-  };
-
-
-
-</script>
-
-<!-- モーダルの読み込み -->
-<script
-  src="{{url_for('static',filename='js/modal.js')}}"
-  type="text/javascript"
-  ></script>
-
-
-
-
-
-
-
-</body>
-
-
-
-
-</html>
+  
+  </body>
+  
+  
+  
+  
+  </html>
